@@ -1,4 +1,5 @@
 import './style.css';
+import { generateAndDownloadCV } from './cvGenerator.js';
 
 const navToggle = document.querySelector('#nav-toggle');
 const navMenu = document.querySelector('#nav-menu');
@@ -158,3 +159,33 @@ if (sections.length && allNavLinks.length) {
     { passive: true }
   );
 }
+
+// ── Dynamic CV PDF Generation ───────────────────────────────────────────────
+const cvButtons = document.querySelectorAll('.btn-download-cv');
+cvButtons.forEach((btn) => {
+  btn.addEventListener('click', async (e) => {
+    e.preventDefault();
+    const label = btn.querySelector('.btn-cv-text') || btn;
+    const prevText = label.textContent;
+
+    try {
+      label.textContent = 'Generating PDF...';
+      btn.disabled = true;
+
+      // Allow UI update tick before synchronous canvas/pdf work
+      await new Promise((resolve) => setTimeout(resolve, 60));
+
+      generateAndDownloadCV();
+
+      label.textContent = 'Downloaded!';
+      setTimeout(() => {
+        label.textContent = prevText;
+        btn.disabled = false;
+      }, 2000);
+    } catch (err) {
+      console.error('Error generating CV PDF:', err);
+      label.textContent = prevText;
+      btn.disabled = false;
+    }
+  });
+});
