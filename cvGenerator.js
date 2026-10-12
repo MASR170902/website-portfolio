@@ -91,7 +91,7 @@ export function generateAndDownloadCV() {
   doc.setFontSize(8.5);
   doc.setTextColor(...COLOR_BODY);
   const summaryLines = doc.splitTextToSize(summaryText, contentWidth);
-  doc.text(summaryLines, marginX, y);
+  doc.text(summaryText, marginX, y, { maxWidth: contentWidth, align: 'justify' });
   y += summaryLines.length * 4 + 2;
 
   // ── 3. Professional Experience (Extracted from #experience) ──────────────────
@@ -100,9 +100,16 @@ export function generateAndDownloadCV() {
   const experienceArticles = Array.from(document.querySelectorAll('#experience article'));
 
   experienceArticles.forEach((article) => {
-    const roleTitle = article.querySelector('h3')?.textContent.trim() || 'Engineer';
-    const period = article.querySelector('p')?.textContent.trim() || '';
-    const company = article.querySelector('p:nth-of-type(2)')?.textContent.trim() || '';
+    const roleTitle = article.querySelector('.role-title, h3')?.textContent.trim() || 'Engineer';
+    const period = article.querySelector('.role-period, p')?.textContent.trim() || '';
+    
+    // Reliably extract company name using explicit class or second paragraph
+    const company = article.querySelector('.role-company')?.textContent.trim() 
+      || Array.from(article.querySelectorAll('p'))
+          .map((p) => p.textContent.trim())
+          .find((t) => t && t !== period && !t.includes('•'))
+      || '';
+
     const bullets = Array.from(article.querySelectorAll('ul li')).map((li) =>
       li.textContent.replace(/^[•\s-]+/, '').trim()
     );
@@ -122,13 +129,15 @@ export function generateAndDownloadCV() {
     y += 4;
 
     // Company
-    doc.setFont('helvetica', 'italic');
-    doc.setFontSize(8.5);
-    doc.setTextColor(...COLOR_MUTED);
-    doc.text(company, marginX, y);
-    y += 4;
+    if (company) {
+      doc.setFont('helvetica', 'italic');
+      doc.setFontSize(8.5);
+      doc.setTextColor(...COLOR_MUTED);
+      doc.text(company, marginX, y);
+      y += 4;
+    }
 
-    // Bullets
+    // Bullets (Justified for executive clean alignment)
     bullets.forEach((bullet) => {
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(8.2);
@@ -140,7 +149,7 @@ export function generateAndDownloadCV() {
       doc.setTextColor(...COLOR_BLUE);
       doc.text('•', marginX + 1.5, y);
       doc.setTextColor(...COLOR_BODY);
-      doc.text(bulletLines, marginX + 5.5, y);
+      doc.text(bullet, marginX + 5.5, y, { maxWidth: contentWidth - 6, align: 'justify' });
       y += bulletLines.length * 3.8 + 1.2;
     });
 
@@ -181,7 +190,7 @@ export function generateAndDownloadCV() {
     doc.setFont('helvetica', 'normal');
     doc.setFontSize(8);
     doc.setTextColor(...COLOR_BODY);
-    doc.text(descLines, marginX, y);
+    doc.text(projectDesc, marginX, y, { maxWidth: contentWidth, align: 'justify' });
     y += descLines.length * 3.6 + 2.5;
   });
 
