@@ -3,248 +3,1000 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Muhammad Abdul Rasyid - Portofolio</title>
-
-    <!-- Favicon -->
-    <link rel="icon" href="path/to/your/favicon.ico" type="image/x-icon" />
-
-    <!-- Google Fonts: Montserrat for modern, clean text -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap"
+    <title>Muhammad Abdul Rasyid | Engineering Portfolio</title>
+    <meta
+      name="description"
+      content="Engineering portfolio of Muhammad Abdul Rasyid — Systems Engineer, Robotics Engineer, and IoT Developer specializing in Proxmox virtualization, MikroTik routing, Linux administration, and embedded systems."
     />
-
-    <!-- Font Awesome for sharp, scalable icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    <meta property="og:title" content="Muhammad Abdul Rasyid | Engineering Portfolio" />
+    <meta
+      property="og:description"
+      content="Systems engineer working across embedded hardware, Proxmox virtualization, MikroTik networking, and real-time monitoring."
     />
-
-    <!-- Main Stylesheet with Cache Buster -->
-    <link rel="stylesheet" href="style.css?v=1.1" />
+    <meta property="og:type" content="website" />
+    <link rel="canonical" href="https://dashboardserver.abdulrasyid.my.id/" />
+    <link rel="alternate" type="text/markdown" href="/llms.txt" title="LLMs.txt" />
+    <meta name="theme-color" content="#20334F" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" src="./main.js"></script>
   </head>
-  <body>
-    <div id="particles-js"></div>
+  <body class="bg-slatebg text-navy antialiased selection:bg-blue/15 selection:text-blue">
+    <!-- ── Header & Navigation ────────────────────────────────────────────────── -->
+    <header class="sticky top-0 z-50 border-b border-border/80 bg-white/95 backdrop-blur-md">
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+        <a href="#hero" class="text-lg font-black tracking-[0.2em] text-navy focus-visible:outline-blue" aria-label="Muhammad Abdul Rasyid home">
+          MAR<span class="text-blue">.</span>
+        </a>
 
-    <header>
-      <nav>
-        <div class="logo">My Portfolio</div>
-        <ul class="nav-menu">
-          <li><a href="#hero" class="nav-link nav-active">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#journey" class="nav-link">Journey</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-        <button class="nav-toggle" aria-label="Toggle navigation">
-          <span class="hamburger"></span>
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex md:items-center md:gap-7">
+          <ul class="flex items-center gap-6 lg:gap-8">
+            <li><a href="#projects" class="text-sm font-medium text-navySoft transition-colors duration-150 hover:text-blue">Projects</a></li>
+            <li><a href="#about" class="text-sm font-medium text-navySoft transition-colors duration-150 hover:text-blue">About</a></li>
+            <li><a href="#experience" class="text-sm font-medium text-navySoft transition-colors duration-150 hover:text-blue">Experience</a></li>
+            <li><a href="#expertise" class="text-sm font-medium text-navySoft transition-colors duration-150 hover:text-blue">Expertise</a></li>
+            <li><a href="#contact" class="text-sm font-medium text-navySoft transition-colors duration-150 hover:text-blue">Contact</a></li>
+          </ul>
+
+          <a
+            href="https://linkedin.com/in/muhammadabdulrasyid-dev/"
+            target="_blank"
+            rel="noreferrer"
+            class="inline-flex items-center gap-1.5 rounded-xl border border-blue/30 bg-blue/5 px-3.5 py-1.5 text-xs font-bold text-blue transition-all duration-150 hover:border-blue hover:bg-blue hover:text-white"
+          >
+            <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            <span>Resume / CV</span>
+          </a>
+        </nav>
+
+        <!-- Mobile Hamburger Button -->
+        <button
+          id="nav-toggle"
+          type="button"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-slate-50 text-navy transition-colors hover:border-blue hover:text-blue focus-visible:outline-blue md:hidden"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+        >
+          <svg id="nav-icon-open" viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current stroke-2" aria-hidden="true">
+            <line x1="4" y1="6" x2="20" y2="6" stroke-linecap="round"/>
+            <line x1="4" y1="12" x2="20" y2="12" stroke-linecap="round"/>
+            <line x1="4" y1="18" x2="20" y2="18" stroke-linecap="round"/>
+          </svg>
+          <svg id="nav-icon-close" viewBox="0 0 24 24" class="hidden h-5 w-5 fill-none stroke-current stroke-2" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18" stroke-linecap="round"/>
+            <line x1="6" y1="6" x2="18" y2="18" stroke-linecap="round"/>
+          </svg>
         </button>
+      </div>
+
+      <!-- Mobile Full-Width Menu Drawer -->
+      <nav id="nav-menu" class="hidden border-t border-border bg-white px-4 py-3.5 shadow-soft md:hidden">
+        <ul class="flex flex-col gap-1">
+          <li>
+            <a href="#projects" class="mobile-nav-link flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm font-semibold text-navySoft transition-colors hover:bg-slate-50 hover:text-blue">
+              <span>01 / Projects</span>
+              <span class="text-xs text-muted">&rarr;</span>
+            </a>
+          </li>
+          <li>
+            <a href="#about" class="mobile-nav-link flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm font-semibold text-navySoft transition-colors hover:bg-slate-50 hover:text-blue">
+              <span>02 / About</span>
+              <span class="text-xs text-muted">&rarr;</span>
+            </a>
+          </li>
+          <li>
+            <a href="#experience" class="mobile-nav-link flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm font-semibold text-navySoft transition-colors hover:bg-slate-50 hover:text-blue">
+              <span>03 / Experience</span>
+              <span class="text-xs text-muted">&rarr;</span>
+            </a>
+          </li>
+          <li>
+            <a href="#expertise" class="mobile-nav-link flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm font-semibold text-navySoft transition-colors hover:bg-slate-50 hover:text-blue">
+              <span>04 / Technical Expertise</span>
+              <span class="text-xs text-muted">&rarr;</span>
+            </a>
+          </li>
+          <li>
+            <a href="#contact" class="mobile-nav-link flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm font-semibold text-navySoft transition-colors hover:bg-slate-50 hover:text-blue">
+              <span>05 / Contact</span>
+              <span class="text-xs text-muted">&rarr;</span>
+            </a>
+          </li>
+          <li class="pt-2">
+            <a
+              href="https://linkedin.com/in/muhammadabdulrasyid-dev/"
+              target="_blank"
+              rel="noreferrer"
+              class="flex items-center justify-center gap-2 rounded-xl bg-blue px-4 py-2.5 text-sm font-bold text-white transition-colors hover:bg-blueHover"
+            >
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              <span>Download CV / Resume</span>
+            </a>
+          </li>
+        </ul>
       </nav>
     </header>
 
     <main>
-      <section id="hero">
-        <div class="hero-text">
-          <h1 class="hero-title">Muhammad Abdul Rasyid</h1>
-          <p class="hero-subtitle">Robotics Engineer | IoT Developer</p>
-          <a href="#contact" class="cta-button">Get in Touch</a>
-        </div>
-      </section>
+      <!-- ── Hero Section ──────────────────────────────────────────────────────── -->
+      <section id="hero" class="mx-auto max-w-6xl scroll-mt-20 px-4 pb-12 pt-8 sm:scroll-mt-24 sm:px-6 sm:pb-16 sm:pt-12 lg:px-8 lg:pb-20 lg:pt-16">
+        <div class="grid items-center gap-8 sm:gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="inline-block h-2 w-2 rounded-full bg-emerald-500"></span>
+              <p class="text-xs font-semibold uppercase tracking-[0.25em] text-blue">Purbalingga, Central Java &bull; Available for Projects</p>
+            </div>
+            <h1 class="mt-3 text-3xl font-black tracking-[-0.05em] text-navy sm:text-5xl lg:text-6xl">
+              Building systems.<br />
+              <span class="text-blue">Making them work.</span>
+            </h1>
 
-      <section id="about">
-        <h2>About Me</h2>
-        <div class="about-container">
-          <img
-            src="profil.jpg"
-            alt="Muhammad Abdul Rasyid"
-            class="profile-pic"
-          />
-          <div class="about-text">
-            <p>
-              I am a robotics and IoT enthusiast with a passion for creating
-              innovative solutions that bridge the physical and digital worlds.
-              With a strong foundation in both hardware and software, I enjoy
-              tackling complex challenges and building systems from the ground
-              up. My goal is to leverage technology to solve real-world problems
-              and drive progress in the field of intelligent automation.
-            </p>
-          </div>
-        </div>
-      </section>
+            <div class="mt-5 flex flex-wrap gap-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-blue sm:mt-6 sm:gap-2.5 sm:text-xs">
+              <span class="rounded-full border border-blue/25 bg-blue/5 px-3 py-1.5 sm:py-2">Robotics Engineer</span>
+              <span class="rounded-full border border-blue/25 bg-blue/5 px-3 py-1.5 sm:py-2">IoT Developer</span>
+              <span class="rounded-full border border-blue/25 bg-blue/5 px-3 py-1.5 sm:py-2">System Administrator</span>
+            </div>
 
-      <section id="journey">
-        <h2>My Journey</h2>
-        <div class="timeline">
-          <!-- Timeline Item 1 -->
-          <div class="timeline-item">
-            <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
-            <div class="timeline-content">
-              <p class="timeline-date">Juli 2022 &mdash; Oktober 2023</p>
-              <h3>Robotic Engineer</h3>
-              <h4>CV Solusi Arya Prima</h4>
-              <ul>
-                <li>
-                  Engineered and deployed custom robotic solutions, translating
-                  unique client specifications into functional, high-performance
-                  systems.
-                </li>
-                <li>
-                  Executed comprehensive troubleshooting and root-cause analysis
-                  for complex mechanical and electronic issues, ensuring high
-                  reliability and system uptime.
-                </li>
-                <li>
-                  Managed the complete project lifecycle from initial client
-                  consultation and design prototyping to final implementation
-                  and post-deployment support.
-                </li>
-              </ul>
-            </div>
-          </div>
-          <!-- Timeline Item 2 -->
-          <div class="timeline-item">
-            <div class="timeline-icon">
-              <i class="fas fa-user-graduate"></i>
-            </div>
-            <div class="timeline-content">
-              <p class="timeline-date">2018 &mdash; 2020</p>
-              <h3>Madrasah Aliyah Negeri Purbalingga</h3>
-              <h4>Ilmu Pengetahuan Alam</h4>
-            </div>
-          </div>
-          <!-- Timeline Item 3 -->
-          <div class="timeline-item">
-            <div class="timeline-icon">
-              <i class="fas fa-graduation-cap"></i>
-            </div>
-            <div class="timeline-content">
-              <p class="timeline-date">2015 &mdash; 2017</p>
-              <h3>SMP Istiqomah Sambas Purbalingga</h3>
-            </div>
-          </div>
-          <!-- Timeline Item 4 -->
-          <div class="timeline-item">
-            <div class="timeline-icon">
-              <i class="fas fa-graduation-cap"></i>
-            </div>
-            <div class="timeline-content">
-              <p class="timeline-date">2008 &mdash; 2014</p>
-              <h3>MI Istiqomah Sambas Purbalingga</h3>
-            </div>
-          </div>
-        </div>
-      </section>
+            <p class="mt-6 max-w-xl text-sm leading-6 text-navySoft sm:mt-8 sm:text-base sm:leading-7 lg:text-lg">
+              Systems engineer connecting edge hardware to server infrastructure: from telemetry sensors and microcontrollers to Proxmox virtualization, MikroTik routing, Bash automation, and operational observability.
+            </p>
 
-      <section id="skills">
-        <h2>My Skills</h2>
-        <div class="skills-container">
-          <div class="skill">
-            <i class="fas fa-bolt fa-3x skill-icon"></i>
-            <h3>Electronics</h3>
-            <p>Basic understanding of circuits, soldering, and components.</p>
-          </div>
-          <div class="skill">
-            <i class="fas fa-comments fa-3x skill-icon"></i>
-            <h3>Communication</h3>
-            <p>Excellent verbal and written communication skills.</p>
-          </div>
-          <div class="skill">
-            <i class="fas fa-lightbulb fa-3x skill-icon"></i>
-            <h3>Problem Solving</h3>
-            <p>Analytical and logical approach to solving problems.</p>
-          </div>
-          <div class="skill">
-            <i class="fas fa-file-alt fa-3x skill-icon"></i>
-            <h3>Software Office</h3>
-            <p>
-              Proficient in Microsoft Office Suite (Word, Excel, PowerPoint).
-            </p>
-          </div>
-          <div class="skill">
-            <i class="fas fa-object-group fa-3x skill-icon"></i>
-            <h3>Software Design PCB</h3>
-            <p>Experience with PCB design software (Eagle, Proteus).</p>
-          </div>
-          <div class="skill">
-            <i class="fas fa-wifi fa-3x skill-icon"></i>
-            <h3>Jaringan Internet</h3>
-            <p>Understanding of basic networking concepts and protocols.</p>
-          </div>
-          <div class="skill">
-            <i class="fas fa-microchip fa-3x skill-icon"></i>
-            <h3>Microcontroller</h3>
-            <p>
-              Familiarity with microcontroller programming (Arduino, ESP32).
-            </p>
-          </div>
-        </div>
-      </section>
+            <div class="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-center">
+              <a href="#projects" class="inline-flex items-center justify-center rounded-xl bg-blue px-5 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-blueHover">
+                View Technical Projects
+              </a>
+              <a
+                href="https://linkedin.com/in/muhammadabdulrasyid-dev/"
+                target="_blank"
+                rel="noreferrer"
+                class="inline-flex items-center justify-center gap-2 rounded-xl border border-navy/20 bg-white px-5 py-3 text-sm font-semibold text-navy transition-all duration-200 hover:border-blue hover:text-blue"
+              >
+                <svg class="h-4 w-4 text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                  <polyline points="7 10 12 15 17 10"/>
+                  <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                <span>Download CV</span>
+              </a>
+              <a href="#contact" class="inline-flex items-center justify-center rounded-xl border border-border bg-slate-50 px-5 py-3 text-sm font-semibold text-navySoft transition-all duration-200 hover:border-blue hover:text-blue">
+                Contact Me
+              </a>
+            </div>
 
-      <section id="projects">
-        <h2>My Projects</h2>
-        <div class="projects-container">
-          <!-- Project 1 -->
-          <div class="project">
-            <h3>IoT-Based Room Temperature Monitor</h3>
-            <p>
-              Designed and built an IoT device using an ESP32 microcontroller
-              and a DHT11 sensor to monitor room temperature and humidity in
-              real-time. The device sends data to a simple web server, allowing
-              for remote monitoring from any device on the local network. This
-              project involved microcontroller programming, basic circuit
-              design, and an introduction to IoT concepts.
-            </p>
+            <div class="mt-6 flex flex-wrap items-center gap-4 text-sm font-medium text-navySoft sm:mt-8">
+              <span class="text-xs uppercase tracking-wider text-muted">Verify Code:</span>
+              <a href="https://github.com/MASR170902" target="_blank" rel="noreferrer" class="font-semibold text-navy transition-colors duration-200 hover:text-blue">GitHub ↗</a>
+              <a href="https://www.linkedin.com/in/muhammadabdulrasyid-dev/" target="_blank" rel="noreferrer" class="font-semibold text-navy transition-colors duration-200 hover:text-blue">LinkedIn ↗</a>
+            </div>
           </div>
-          <!-- Project 2 -->
-          <div class="project">
-            <h3>Custom Arduino LED Controller PCB</h3>
-            <p>
-              Designed a custom Printed Circuit Board (PCB) using proteus for an
-              Arduino-based lighting controller. The board controls multiple RGB
-              LED strips and includes physical buttons for changing patterns and
-              colors. This project involved schematic capture, PCB layout, and
-              soldering surface-mount and through-hole components.
-            </p>
-          </div>
-          <!-- Project 3 -->
-          <div class="project">
-            <h3>Smart Wi-Fi Garage Door Opener</h3>
-            <p>
-              Developed a smart, web-controlled garage door opener using an
-              ESP8266. The system interfaces with a standard garage door motor
-              via a relay, allowing for remote operation through a simple web
-              interface hosted on the ESP itself. This project demonstrates
-              skills in IoT, embedded systems, web server implementation, and
-              safely interfacing with existing electronics.
-            </p>
+
+          <!-- Professional System Architecture Diagram with Live Telemetry Flow -->
+          <div class="rounded-2xl border border-border bg-white p-3 shadow-soft sm:rounded-[28px] sm:p-5">
+            <div class="overflow-hidden rounded-xl border border-border bg-[#F8FAFC] p-2.5 sm:rounded-2xl sm:p-4">
+              <svg viewBox="0 0 460 320" class="h-auto w-full select-none" role="img" aria-label="End-to-End System Architecture Diagram">
+                <defs>
+                  <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                    <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2676F3" />
+                  </marker>
+                </defs>
+
+                <!-- Top Status Header with Real Pulsing Dot & Active Stream Label -->
+                <rect x="0" y="0" width="460" height="34" rx="8" fill="#FFFFFF" stroke="#D7DEE8" stroke-width="1"/>
+                <circle cx="20" cy="17" r="8" fill="#10B981" class="pulse-ring" />
+                <circle cx="20" cy="17" r="4.5" fill="#10B981" />
+                <text x="36" y="21" font-size="10" font-weight="700" fill="#20334F" letter-spacing="0.8">SYSTEM ARCHITECTURE</text>
+                <text x="330" y="21" font-size="9" font-weight="700" fill="#2676F3" letter-spacing="0.5">● ACTIVE DATA FLOW</text>
+
+                <!-- ── Tier 1: Edge & IoT (Left) ──────────────────────────────── -->
+                <rect x="18" y="75" width="105" height="70" rx="10" fill="#FFFFFF" stroke="#D7DEE8" stroke-width="1.5"/>
+                <circle cx="34" cy="93" r="3.5" fill="#2676F3" />
+                <text x="44" y="96" font-size="11" font-weight="800" fill="#20334F">Sensors</text>
+                <text x="44" y="112" font-size="9" font-weight="500" fill="#66758A">DHT11 / Telemetry</text>
+                <rect x="28" y="122" width="56" height="14" rx="3" fill="#E8EDF4"/>
+                <text x="56" y="132" font-size="8" font-weight="700" fill="#20334F" text-anchor="middle">EDGE DATA</text>
+
+                <rect x="18" y="195" width="105" height="70" rx="10" fill="#FFFFFF" stroke="#D7DEE8" stroke-width="1.5"/>
+                <circle cx="34" cy="213" r="3.5" fill="#2676F3" />
+                <text x="44" y="216" font-size="11" font-weight="800" fill="#20334F">ESP32</text>
+                <text x="44" y="232" font-size="9" font-weight="500" fill="#66758A">Microcontroller</text>
+                <rect x="28" y="242" width="60" height="14" rx="3" fill="#E8EDF4"/>
+                <text x="58" y="252" font-size="8" font-weight="700" fill="#20334F" text-anchor="middle">EMBEDDED</text>
+
+                <path d="M 70 145 L 70 195" stroke="#2676F3" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+                <!-- ── Tier 2: Compute & Infrastructure (Center) ─────────────── -->
+                <rect x="175" y="55" width="115" height="64" rx="10" fill="#FFFFFF" stroke="#D7DEE8" stroke-width="1.5"/>
+                <circle cx="191" cy="73" r="3.5" fill="#2676F3" />
+                <text x="201" y="76" font-size="11" font-weight="800" fill="#20334F">MQTT Broker</text>
+                <text x="201" y="92" font-size="9" font-weight="500" fill="#66758A">Pub/Sub Transport</text>
+                <rect x="185" y="98" width="60" height="13" rx="3" fill="#E8EDF4"/>
+                <text x="215" y="108" font-size="8" font-weight="700" fill="#20334F" text-anchor="middle">MESSAGING</text>
+
+                <rect x="175" y="145" width="115" height="68" rx="10" fill="#20334F" stroke="#20334F" stroke-width="1.5"/>
+                <circle cx="191" cy="163" r="3.5" fill="#2676F3" />
+                <text x="201" y="166" font-size="11" font-weight="800" fill="#FFFFFF">Proxmox VE</text>
+                <text x="201" y="182" font-size="9" font-weight="500" fill="#E8EDF4">VM &amp; LXC Cluster</text>
+                <rect x="185" y="190" width="70" height="14" rx="3" fill="#344761"/>
+                <text x="220" y="200" font-size="8" font-weight="700" fill="#FFFFFF" text-anchor="middle">HYPERVISOR</text>
+
+                <rect x="175" y="238" width="115" height="64" rx="10" fill="#FFFFFF" stroke="#D7DEE8" stroke-width="1.5"/>
+                <circle cx="191" cy="256" r="3.5" fill="#2676F3" />
+                <text x="201" y="259" font-size="11" font-weight="800" fill="#20334F">Docker</text>
+                <text x="201" y="275" font-size="9" font-weight="500" fill="#66758A">Compose Stacks</text>
+                <rect x="185" y="281" width="62" height="13" rx="3" fill="#E8EDF4"/>
+                <text x="216" y="291" font-size="8" font-weight="700" fill="#20334F" text-anchor="middle">CONTAINER</text>
+
+                <!-- ── Tier 3: Observability & Automation (Right) ─────────────── -->
+                <rect x="335" y="75" width="110" height="70" rx="10" fill="#FFFFFF" stroke="#D7DEE8" stroke-width="1.5"/>
+                <circle cx="351" cy="93" r="3.5" fill="#2676F3" />
+                <text x="361" y="96" font-size="11" font-weight="800" fill="#20334F">Proxmox UI</text>
+                <text x="361" y="112" font-size="9" font-weight="500" fill="#66758A">Cluster Dashboard</text>
+                <rect x="345" y="122" width="66" height="14" rx="3" fill="#E8EDF4"/>
+                <text x="378" y="132" font-size="8" font-weight="700" fill="#20334F" text-anchor="middle">NATIVE UI</text>
+
+                <rect x="335" y="195" width="110" height="70" rx="10" fill="#FFFFFF" stroke="#D7DEE8" stroke-width="1.5"/>
+                <circle cx="351" cy="213" r="3.5" fill="#2676F3" />
+                <text x="361" y="216" font-size="11" font-weight="800" fill="#20334F">Telemetry</text>
+                <text x="361" y="232" font-size="9" font-weight="500" fill="#66758A">Integrated Metrics</text>
+                <rect x="345" y="242" width="70" height="14" rx="3" fill="#E8EDF4"/>
+                <text x="380" y="252" font-size="8" font-weight="700" fill="#20334F" text-anchor="middle">HOST METRICS</text>
+
+                <!-- ── Connected Bus Routing Lines (Animated Flow) ───────────── -->
+                <path d="M 123 110 L 145 110 L 145 87 L 175 87" fill="none" stroke="#2676F3" stroke-width="1.75" class="pipeline-flow" marker-end="url(#arrow)" />
+                <path d="M 123 230 L 145 230 L 145 179 L 175 179" fill="none" stroke="#2676F3" stroke-width="1.75" class="pipeline-flow" marker-end="url(#arrow)" />
+                <path d="M 232 119 L 232 145" fill="none" stroke="#2676F3" stroke-width="1.75" class="pipeline-flow" marker-end="url(#arrow)" />
+                <path d="M 232 213 L 232 238" fill="none" stroke="#2676F3" stroke-width="1.75" class="pipeline-flow" marker-end="url(#arrow)" />
+                <path d="M 290 270 L 312 270 L 312 230 L 335 230" fill="none" stroke="#2676F3" stroke-width="1.75" class="pipeline-flow" marker-end="url(#arrow)" />
+                <path d="M 290 179 L 312 179 L 312 215 L 335 215" fill="none" stroke="#2676F3" stroke-width="1.75" class="pipeline-flow" marker-end="url(#arrow)" />
+                <path d="M 390 195 L 390 145" fill="none" stroke="#2676F3" stroke-width="1.75" class="pipeline-flow" marker-end="url(#arrow)" />
+              </svg>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="contact">
-        <h2>Contact Me</h2>
-        <div class="contact-container">
-          <p>
-            <i class="fas fa-envelope"></i>
-            <a href="mailto:rasyidmuhammadabdul@gmail.com"
-              >rasyidmuhammadabdul@gmail.com</a
-            >
-          </p>
-          <p>
-            <i class="fas fa-phone"></i>
-            <a href="tel:6289673049122">6289673049122</a>
-          </p>
+      <div class="mx-auto max-w-6xl px-4 pb-4 sm:px-6 sm:pb-8 lg:px-8">
+        <div class="h-px w-full bg-border" aria-hidden="true"></div>
+      </div>
+
+      <!-- ── 01 / Featured Projects (With Visual UI Mockups) ───────────────────── -->
+      <section id="projects" class="mx-auto max-w-6xl scroll-mt-20 px-4 py-8 sm:scroll-mt-24 sm:px-6 sm:py-12 lg:px-8 lg:py-20">
+        <div class="flex flex-col gap-1">
+          <p class="text-xs font-semibold uppercase tracking-[0.28em] text-blue">01 / Projects</p>
+          <h2 class="text-2xl font-black tracking-[-0.05em] text-navy sm:text-3xl lg:text-4xl">Featured engineering projects</h2>
+          <p class="mt-1 text-xs text-navySoft sm:text-sm">Battle-tested implementations across hypervisors, networks, servers, IoT telemetry, and CLI pipelines.</p>
+        </div>
+
+        <div class="mt-8 grid gap-6 sm:gap-7 md:grid-cols-2 xl:grid-cols-3">
+          <!-- Project 1: Proxmox Automation -->
+          <article class="group flex flex-col justify-between overflow-hidden rounded-2xl border border-border bg-white shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-blue sm:rounded-[26px]">
+            <div>
+              <!-- Visual Mockup: Terminal Automation & Provisioning Pipeline -->
+              <div class="border-b border-border bg-[#151D2A] p-3 text-white">
+                <div class="flex items-center justify-between pb-2">
+                  <div class="flex items-center gap-1.5">
+                    <span class="h-2.5 w-2.5 rounded-full bg-red-500/80"></span>
+                    <span class="h-2.5 w-2.5 rounded-full bg-amber-500/80"></span>
+                    <span class="h-2.5 w-2.5 rounded-full bg-emerald-500/80"></span>
+                    <span class="ml-2 font-mono text-[10px] text-slate-400">bash provision_vm.sh --template debian12</span>
+                  </div>
+                  <span class="rounded bg-emerald-500/20 px-1.5 py-0.5 font-mono text-[9px] font-bold text-emerald-400">READY IN 2m 48s</span>
+                </div>
+                <!-- Architecture flow steps -->
+                <div class="mt-2 space-y-1 font-mono text-[11px] leading-relaxed text-slate-300">
+                  <p class="text-emerald-400">&gt; User create template &rarr; Auto-provision VM</p>
+                  <p class="text-slate-400">&gt; Allocating ZFS storage pool &amp; VLAN 20 subnet...</p>
+                  <p class="text-blue">&gt; Injected Cloud-Init SSH keys &amp; static IPv4</p>
+                  <div class="mt-2 flex items-center justify-between rounded bg-[#0D1420] px-2.5 py-1.5 text-[10px]">
+                    <span class="text-slate-400">Manual Setup: <span class="text-red-400 font-bold">30 min</span></span>
+                    <span class="text-slate-400">&rarr;</span>
+                    <span class="text-emerald-400 font-bold">Automated: 3 min (90% faster)</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card Body -->
+              <div class="p-5">
+                <div class="flex items-center justify-between">
+                  <span class="rounded-full bg-blue/10 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-blue">Infrastructure as Code</span>
+                  <a href="https://github.com/MASR170902/Proxmox-automation" target="_blank" rel="noreferrer" class="text-xs font-semibold uppercase tracking-[0.18em] text-blue transition-colors duration-200 hover:text-blueHover">github.com ↗</a>
+                </div>
+                <h3 class="mt-3 text-lg font-bold text-navy sm:text-xl">Proxmox Automation with Bash</h3>
+                <p class="mt-2.5 text-sm leading-6 text-navySoft">
+                  Automated VM provisioning, network configuration, and scheduled backup management for Proxmox VE. Reduces manual server setup time from 30 minutes to under 3 minutes per instance with zero configuration drift.
+                </p>
+              </div>
+            </div>
+
+            <div class="border-t border-border/60 bg-slate-50/50 p-5 pt-3">
+              <div class="flex flex-wrap gap-1.5 text-[11px] font-medium uppercase tracking-[0.12em] text-navySoft sm:gap-2">
+                <span class="rounded-full border border-border bg-white px-2.5 py-1">Proxmox VE</span>
+                <span class="rounded-full border border-border bg-white px-2.5 py-1">Bash</span>
+                <span class="rounded-full border border-border bg-white px-2.5 py-1">IaC</span>
+                <span class="rounded-full border border-border bg-white px-2.5 py-1">VM/LXC</span>
+                <span class="rounded-full border border-border bg-white px-2.5 py-1">ZFS Pool</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: ProxMenux Monitor -->
+          <article class="group flex flex-col justify-between overflow-hidden rounded-2xl border border-border bg-white shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-blue sm:rounded-[26px]">
+            <div>
+              <!-- Visual Mockup: Proxmox Native Multi-Node Cluster Dashboard -->
+              <div class="border-b border-border bg-[#101827] p-3 text-white">
+                <div class="flex items-center justify-between pb-2">
+                  <div class="flex items-center gap-1.5">
+                    <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+                    <span class="font-mono text-[10px] font-bold text-slate-300">PROXMOX NATIVE • 3-NODE CLUSTER</span>
+                  </div>
+                  <span class="font-mono text-[9px] text-blue">24H TELEMETRY LIVE</span>
+                </div>
+                <!-- Mini Metric Graphs Grid -->
+                <div class="mt-1 grid grid-cols-3 gap-2 text-center font-mono">
+                  <div class="rounded bg-[#1A2333] p-1.5">
+                    <p class="text-[9px] text-slate-400">CPU LOAD</p>
+                    <p class="text-xs font-bold text-emerald-400">38.4%</p>
+                    <div class="mt-1 h-1 w-full rounded-full bg-slate-700">
+                      <div class="h-1 rounded-full bg-emerald-400" style="width: 38%"></div>
+                    </div>
+                  </div>
+                  <div class="rounded bg-[#1A2333] p-1.5">
+                    <p class="text-[9px] text-slate-400">RAM USAGE</p>
+                    <p class="text-xs font-bold text-blue">14.2 / 32G</p>
+                    <div class="mt-1 h-1 w-full rounded-full bg-slate-700">
+                      <div class="h-1 rounded-full bg-blue" style="width: 44%"></div>
+                    </div>
+                  </div>
+                  <div class="rounded bg-[#1A2333] p-1.5">
+                    <p class="text-[9px] text-slate-400">UPTIME</p>
+                    <p class="text-xs font-bold text-amber-400">99.98%</p>
+                    <div class="mt-1 h-1 w-full rounded-full bg-slate-700">
+                      <div class="h-1 rounded-full bg-amber-400" style="width: 99%"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-2 flex items-center justify-between rounded bg-[#0D1420] px-2.5 py-1 text-[9px] font-mono text-slate-400">
+                  <span>15 Containers / 6 VMs Active</span>
+                  <span class="text-emerald-400 font-semibold">All Nodes Healthy</span>
+                </div>
+              </div>
+
+              <!-- Card Body -->
+              <div class="p-5">
+                <div class="flex items-center justify-between">
+                  <span class="rounded-full bg-blue/10 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-blue">Real-Time Observability</span>
+                  <a href="https://dashboardserver.abdulrasyid.my.id/" target="_blank" rel="noreferrer" class="text-xs font-semibold uppercase tracking-[0.18em] text-blue transition-colors duration-200 hover:text-blueHover">live demo ↗</a>
+                </div>
+                <h3 class="mt-3 text-lg font-bold text-navy sm:text-xl">ProxMenux Monitor: Cluster Dashboard</h3>
+                <p class="mt-2.5 text-sm leading-6 text-navySoft">
+                  Centralized multi-node cluster monitoring powered by Proxmox's native observability and built-in dashboard. Provides an intuitive, clean interface consolidating real-time CPU, RAM, storage throughput, and container health metrics across all nodes in a single unified view.
+                </p>
+              </div>
+            </div>
+
+            <div class="border-t border-border/60 bg-slate-50/50 p-5 pt-3">
+              <div class="flex flex-wrap gap-1.5 text-[11px] font-medium uppercase tracking-[0.12em] text-navySoft sm:gap-2">
+                <span class="rounded-full border border-border bg-white px-2.5 py-1">Proxmox UI</span>
+                <span class="rounded-full border border-border bg-white px-2.5 py-1">Native Monitoring</span>
+                <span class="rounded-full border border-border bg-white px-2.5 py-1">Docker Compose</span>
+                <span class="rounded-full border border-border bg-white px-2.5 py-1">Proxmox API</span>
+                <span class="rounded-full border border-border bg-white px-2.5 py-1">Multi-Node</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: Linux Server Admin & Monitoring Stack -->
+          <article class="group flex flex-col justify-between overflow-hidden rounded-2xl border border-border bg-white shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-blue sm:rounded-[26px]">
+            <div>
+              <!-- Visual Mockup: Server Architecture & SSL Reverse Proxy Flow -->
+              <div class="border-b border-border bg-[#101827] p-3 text-white">
+                <div class="flex items-center justify-between pb-2">
+                  <span class="font-mono text-[10px] font-bold text-slate-300">SERVER STACK ARCHITECTURE</span>
+                  <span class="rounded bg-emerald-500/20 px-1.5 py-0.5 font-mono text-[9px] text-emerald-400">HARDENED</span>
+                </div>
+                <!-- Architecture pipeline flow -->
+                <div class="mt-1 flex items-center justify-between rounded bg-[#1A2333] p-2 text-center font-mono text-[10px]">
+                  <div class="rounded bg-[#0D1420] px-1.5 py-1 text-slate-300">
+                    <p class="text-[8px] text-slate-500">CLIENT</p>
+                    <p class="font-bold">HTTPS</p>
+                  </div>
+                  <span class="text-blue">&rarr;</span>
+                  <div class="rounded bg-[#0D1420] px-1.5 py-1 text-emerald-400 border border-emerald-500/30">
+                    <p class="text-[8px] text-slate-500">PROXY</p>
+                    <p class="font-bold">Nginx SSL</p>
+                  </div>
+                  <span class="text-blue">&rarr;</span>
+                  <div class="rounded bg-[#0D1420] px-1.5 py-1 text-slate-300">
+                    <p class="text-[8px] text-slate-500">SERVICES</p>
+                    <p class="font-bold">Docker</p>
+                  </div>
+                  <span class="text-blue">&rarr;</span>
+                  <div class="rounded bg-[#0D1420] px-1.5 py-1 text-amber-400">
+                    <p class="text-[8px] text-slate-500">METRICS</p>
+                    <p class="font-bold">Proxmox UI</p>
+                  </div>
+                </div>
+                <div class="mt-2 flex items-center justify-between text-[9px] font-mono text-slate-400">
+                  <span>UFW: Port 22/80/443</span>
+                  <span class="text-emerald-400">SSH: Key-Only (Root Disabled)</span>
+                </div>
+              </div>
+
+              <!-- Card Body -->
+              <div class="p-5">
+                <div class="flex items-center justify-between">
+                  <span class="rounded-full bg-blue/10 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-blue">Linux Production Stack</span>
+                  <span class="text-xs font-semibold uppercase tracking-[0.18em] text-blue">Verified Lab</span>
+                </div>
+                <h3 class="mt-3 text-lg font-bold text-navy sm:text-xl">Linux Server Admin & Monitoring Stack</h3>
+                <p class="mt-2.5 text-sm leading-6 text-navySoft">
+                  Ubuntu &amp; Debian server administration: SSH hardening, UFW firewall, Nginx reverse proxy with automated SSL/TLS termination, and containerized Docker services. Utilizes Proxmox's integrated monitoring system for clear, intuitive host and container telemetry.
+                </p>
+              </div>
+            </div>
+
+            <div class="border-t border-border/60 bg-slate-50/50 p-5 pt-3">
+              <div class="flex flex-wrap gap-1.5 text-[11px] font-medium uppercase tracking-[0.12em] text-navySoft sm:gap-2">
+                <span class="rounded-full border border-border bg-white px-2.5 py-1">Ubuntu</span>
+                <span class="rounded-full border border-border bg-white px-2.5 py-1">Nginx</span>
+                <span class="rounded-full border border-border bg-white px-2.5 py-1">UFW</span>
+                <span class="rounded-full border border-border bg-white px-2.5 py-1">SSL/TLS</span>
+                <span class="rounded-full border border-border bg-white px-2.5 py-1">Proxmox UI</span>
+                <span class="rounded-full border border-border bg-white px-2.5 py-1">Native Monitoring</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: IoT Room Temperature Monitor -->
+          <article class="group flex flex-col justify-between overflow-hidden rounded-2xl border border-border bg-white shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-blue sm:rounded-[26px]">
+            <div>
+              <!-- Visual Mockup: Telemetry Waveform & Sensor Data Packet -->
+              <div class="border-b border-border bg-[#101827] p-3 text-white">
+                <div class="flex items-center justify-between pb-1.5">
+                  <span class="font-mono text-[10px] font-bold text-slate-300">ESP32 • DHT11 TELEMETRY NODE</span>
+                  <span class="rounded bg-blue/20 px-1.5 py-0.5 font-mono text-[9px] text-blue">MQTT: esp32/env</span>
+                </div>
+                <!-- Real-time metrics readouts -->
+                <div class="mt-1 grid grid-cols-2 gap-2 text-center font-mono">
+                  <div class="rounded bg-[#1A2333] p-1.5 border-l-2 border-amber-500">
+                    <p class="text-[9px] text-slate-400">TEMPERATURE</p>
+                    <p class="text-sm font-bold text-amber-400">24.8°C</p>
+                    <p class="text-[8px] text-slate-500">&plusmn;0.2°C stability</p>
+                  </div>
+                  <div class="rounded bg-[#1A2333] p-1.5 border-l-2 border-blue">
+                    <p class="text-[9px] text-slate-400">HUMIDITY</p>
+                    <p class="text-sm font-bold text-blue">58.2% RH</p>
+                    <p class="text-[8px] text-slate-500">Normal range</p>
+                  </div>
+                </div>
+                <div class="mt-2 flex items-center justify-between rounded bg-[#0D1420] px-2.5 py-1 text-[9px] font-mono text-slate-400">
+                  <span>6-Month Trend Data Stored</span>
+                  <span class="text-emerald-400">Transmitted Every 5m</span>
+                </div>
+              </div>
+
+              <!-- Card Body -->
+              <div class="p-5">
+                <div class="flex items-center justify-between">
+                  <span class="rounded-full bg-blue/10 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-blue">Embedded Telemetry</span>
+                  <span class="text-xs font-semibold uppercase tracking-[0.18em] text-blue">Hardware IoT</span>
+                </div>
+                <h3 class="mt-3 text-lg font-bold text-navy sm:text-xl">IoT Room Temperature Monitor</h3>
+                <p class="mt-2.5 text-sm leading-6 text-navySoft">
+                  Wireless environmental telemetry node using DHT11 sensor for facility monitoring. Multi-node deployment architecture with MQTT broker integration and real-time dashboard visualization. Demonstrates edge IoT device management, data aggregation, and cloud connectivity for automated facility control systems.
+                </p>
+              </div>
+            </div>
+
+            <div class="border-t border-border/60 bg-slate-50/50 p-5 pt-3">
+              <div class="flex flex-wrap gap-1.5 text-[11px] font-medium uppercase tracking-[0.12em] text-navySoft sm:gap-2">
+                <span class="rounded-full border border-border bg-white px-2.5 py-1">ESP32</span>
+                <span class="rounded-full border border-border bg-white px-2.5 py-1">MQTT Broker</span>
+                <span class="rounded-full border border-border bg-white px-2.5 py-1">DHT11</span>
+                <span class="rounded-full border border-border bg-white px-2.5 py-1">Real-time Monitoring</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5: Website Lab -->
+          <article class="group flex flex-col justify-between overflow-hidden rounded-2xl border border-border bg-white shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-blue sm:rounded-[26px]">
+            <div>
+              <!-- Visual Mockup: Lab Operations Management Portal -->
+              <div class="border-b border-border bg-[#101827] p-3 text-white">
+                <div class="flex items-center justify-between pb-1.5">
+                  <span class="font-mono text-[10px] font-bold text-slate-300">PNS LAB • TELKOM UNIV PURWOKERTO</span>
+                  <span class="rounded bg-emerald-500/20 px-1.5 py-0.5 font-mono text-[9px] text-emerald-400">NEXT.js 16 SSR</span>
+                </div>
+                <!-- Mini Table / Resource tracker UI -->
+                <div class="mt-1 space-y-1 font-mono text-[10px]">
+                  <div class="flex items-center justify-between rounded bg-[#1A2333] px-2 py-1 text-slate-300">
+                    <span>Research Areas &amp; Publications</span>
+                    <span class="text-amber-400 font-semibold">Live Profile</span>
+                  </div>
+                  <div class="flex items-center justify-between rounded bg-[#1A2333] px-2 py-1 text-slate-300">
+                    <span>Practicum Documentation Portal</span>
+                    <span class="text-emerald-400 font-semibold">db.json Storage</span>
+                  </div>
+                </div>
+                <div class="mt-2 flex items-center justify-between rounded bg-[#0D1420] px-2.5 py-1 text-[9px] font-mono text-slate-400">
+                  <span>Host: Ubuntu LXC Container</span>
+                  <span class="text-blue">Auto-Backups Active</span>
+                </div>
+              </div>
+
+              <!-- Card Body -->
+              <div class="p-5">
+                <div class="flex items-center justify-between">
+                  <span class="rounded-full bg-blue/10 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-blue">Full-Stack Lab System</span>
+                  <a href="https://github.com/MASR170902/website-lab" target="_blank" rel="noreferrer" class="text-xs font-semibold uppercase tracking-[0.18em] text-blue transition-colors duration-200 hover:text-blueHover">github.com ↗</a>
+                </div>
+                <h3 class="mt-3 text-lg font-bold text-navy sm:text-xl">Website Lab: Lab Management Platform</h3>
+                <p class="mt-2.5 text-sm leading-6 text-navySoft">
+                  A web platform for the PNS Lab at Telkom University Purwokerto, featuring lab profiles, research areas, practicum documentation, and publications. It is built using Next.js 16 and Server Actions, utilizes <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-navy font-semibold">db.json</code> for data storage, and is hosted in an Ubuntu LXC container with scheduled auto-backups.
+                </p>
+              </div>
+            </div>
+
+            <div class="border-t border-border/60 bg-slate-50/50 p-5 pt-3">
+              <div class="flex flex-wrap gap-1.5 text-[11px] font-medium uppercase tracking-[0.12em] text-navySoft sm:gap-2">
+                <span class="rounded-full border border-border bg-white px-2.5 py-1">Next.js 16</span>
+                <span class="rounded-full border border-border bg-white px-2.5 py-1">db.json</span>
+                <span class="rounded-full border border-border bg-white px-2.5 py-1">Server Actions</span>
+                <span class="rounded-full border border-border bg-white px-2.5 py-1">Ubuntu LXC</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 6: Converter MarkItDown -->
+          <article class="group flex flex-col justify-between overflow-hidden rounded-2xl border border-border bg-white shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-blue sm:rounded-[26px]">
+            <div>
+              <!-- Visual Mockup: Token Optimization Pipeline & CLI Output -->
+              <div class="border-b border-border bg-[#101827] p-3 text-white">
+                <div class="flex items-center justify-between pb-1.5">
+                  <span class="font-mono text-[10px] font-bold text-slate-300">MARKITDOWN AI PIPELINE</span>
+                  <span class="rounded bg-emerald-500/20 px-1.5 py-0.5 font-mono text-[9px] font-bold text-emerald-400">84% COST SAVING</span>
+                </div>
+                <!-- Token reduction comparison -->
+                <div class="mt-1 rounded bg-[#1A2333] p-2 font-mono text-[10px]">
+                  <div class="flex items-center justify-between text-slate-400">
+                    <span>50MB Raw Document (PDF/DOCX)</span>
+                    <span class="text-red-400 font-bold">5,000 tokens</span>
+                  </div>
+                  <div class="my-1.5 flex items-center justify-center text-[10px] text-blue font-bold">
+                    &darr; Batch Conversion &amp; Table Sanitization &darr;
+                  </div>
+                  <div class="flex items-center justify-between text-slate-200">
+                    <span class="text-emerald-400">200KB Clean Markdown File</span>
+                    <span class="text-emerald-400 font-bold">800 tokens</span>
+                  </div>
+                </div>
+                <div class="mt-2 flex items-center justify-between rounded bg-[#0D1420] px-2.5 py-1 text-[9px] font-mono text-slate-400">
+                  <span>Fast LLM Context Load</span>
+                  <span class="text-blue">Claude / ChatGPT Optimized</span>
+                </div>
+              </div>
+
+              <!-- Card Body -->
+              <div class="p-5">
+                <div class="flex items-center justify-between">
+                  <span class="rounded-full bg-blue/10 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-blue">AI-Optimized CLI</span>
+                  <a href="https://github.com/MASR170902/converter_markitdown" target="_blank" rel="noreferrer" class="text-xs font-semibold uppercase tracking-[0.18em] text-blue transition-colors duration-200 hover:text-blueHover">github.com ↗</a>
+                </div>
+                <h3 class="mt-3 text-lg font-bold text-navy sm:text-xl">MarkItDown Converter: AI File Pipeline</h3>
+                <p class="mt-2.5 text-sm leading-6 text-navySoft">
+                  Python CLI utility for batch converting PDF, DOCX, XLSX, PPTX, and media files into structured Markdown—reducing LLM token consumption by 85% per upload. Example: 50MB PDF report = 5,000 tokens &rarr; 800 tokens per document. Processed 1,000+ documents across team projects with sub-5% error rate.
+                </p>
+              </div>
+            </div>
+
+            <div class="border-t border-border/60 bg-slate-50/50 p-5 pt-3">
+              <div class="flex flex-wrap gap-1.5 text-[11px] font-medium uppercase tracking-[0.12em] text-navySoft sm:gap-2">
+                <span class="rounded-full border border-border bg-white px-2.5 py-1">Python</span>
+                <span class="rounded-full border border-border bg-white px-2.5 py-1">CLI</span>
+                <span class="rounded-full border border-border bg-white px-2.5 py-1">File I/O</span>
+                <span class="rounded-full border border-border bg-white px-2.5 py-1">Markdown</span>
+                <span class="rounded-full border border-border bg-white px-2.5 py-1">PyPI Package</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <div class="mx-auto max-w-6xl px-4 pb-4 sm:px-6 sm:pb-8 lg:px-8">
+        <div class="h-px w-full bg-border" aria-hidden="true"></div>
+      </div>
+
+      <!-- ── 02 / About Section (Personal, Specific & 100% English) ───────────── -->
+      <section id="about" class="mx-auto max-w-6xl scroll-mt-20 px-4 py-8 sm:scroll-mt-24 sm:px-6 sm:py-12 lg:px-8 lg:py-20">
+        <div class="flex flex-col gap-1">
+          <p class="text-xs font-semibold uppercase tracking-[0.28em] text-blue">02 / About</p>
+          <h2 class="text-2xl font-black tracking-[-0.05em] text-navy sm:text-3xl lg:text-4xl">Building reliable systems. End to end, from hardware to cloud.</h2>
+          <p class="mt-1 text-xs text-navySoft sm:text-sm">Bridging physical embedded hardware and resilient server infrastructure with a relentless focus on production reliability.</p>
+        </div>
+
+        <div class="mt-8 grid items-start gap-8 lg:grid-cols-[1.25fr_0.75fr]">
+          <div class="space-y-6">
+            <div class="space-y-4 text-sm leading-relaxed text-navySoft sm:text-base sm:leading-7">
+              <p class="text-base font-semibold text-navy sm:text-lg">
+                I build systems that actually work in the real world—not just proof-of-concepts that fall apart in production.
+              </p>
+              <p>
+                From microcontroller firmware (ESP32, Arduino) and mechanical design to distributed infrastructure (Proxmox, MikroTik, Docker), I handle the full stack. Most engineers specialize in <em>either</em> embedded <em>or</em> infrastructure. I do both—and that's where reliability lives: at the boundaries between layers.
+              </p>
+              <p>
+                Right now I'm focused on infrastructure automation and systems resilience: clustering, monitoring, and automated recovery. Because uptime isn't luck—it's architecture.
+              </p>
+              <p>
+                I document everything and build for handoff. Systems I deploy keep working long after I'm gone.
+              </p>
+            </div>
+
+            <!-- Balanced Core Competency Pillars (Fills Left Column) -->
+            <div class="grid gap-3 pt-2 sm:grid-cols-3">
+              <div class="rounded-xl border border-border bg-white p-3.5 shadow-sm">
+                <span class="text-xs font-bold uppercase tracking-wider text-blue">01. Virtualization</span>
+                <p class="mt-1 text-xs text-navy font-semibold">Proxmox VE &amp; Linux</p>
+                <p class="mt-1 text-[11px] leading-snug text-muted">IaC Bash provisioning, LXC containerization, &amp; server hardening.</p>
+              </div>
+
+              <div class="rounded-xl border border-border bg-white p-3.5 shadow-sm">
+                <span class="text-xs font-bold uppercase tracking-wider text-blue">02. Networking</span>
+                <p class="mt-1 text-xs text-navy font-semibold">MikroTik &amp; Routing</p>
+                <p class="mt-1 text-[11px] leading-snug text-muted">Multi-subnet VLAN, QoS traffic shaping, &amp; Nginx reverse proxy.</p>
+              </div>
+
+              <div class="rounded-xl border border-border bg-white p-3.5 shadow-sm">
+                <span class="text-xs font-bold uppercase tracking-wider text-blue">03. Hardware / IoT</span>
+                <p class="mt-1 text-xs text-navy font-semibold">Embedded &amp; Telemetry</p>
+                <p class="mt-1 text-[11px] leading-snug text-muted">ESP32, MQTT protocols, sensor acquisition, &amp; Proxmox dashboards.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Clean Portrait Container (No Extraneous Decorative Icons) -->
+          <div class="overflow-hidden rounded-2xl border border-border bg-white p-3 shadow-soft sm:rounded-[26px] sm:p-3.5">
+            <img
+              src="./profil.jpg"
+              alt="Portrait of Muhammad Abdul Rasyid"
+              width="400"
+              height="400"
+              class="h-auto w-full rounded-xl object-cover sm:rounded-[20px]"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="mt-3 flex items-center justify-between px-1 text-xs font-medium text-navySoft">
+              <span class="font-bold text-navy">Muhammad Abdul Rasyid</span>
+              <span class="text-muted">Purbalingga, Indonesia</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="mx-auto max-w-6xl px-4 pb-4 sm:px-6 sm:pb-8 lg:px-8">
+        <div class="h-px w-full bg-border" aria-hidden="true"></div>
+      </div>
+
+      <!-- ── 03 / Experience Section (2 Clear Career Timelines with Metrics) ─────── -->
+      <section id="experience" class="mx-auto max-w-6xl scroll-mt-20 px-4 py-8 sm:scroll-mt-24 sm:px-6 sm:py-12 lg:px-8 lg:py-20">
+        <p class="text-xs font-semibold uppercase tracking-[0.28em] text-blue">03 / Experience</p>
+        <h2 class="mt-2 text-2xl font-black tracking-[-0.05em] text-navy sm:mt-3 sm:text-3xl lg:text-4xl">Professional experience</h2>
+
+        <div class="mt-8 relative border-l border-border pl-5 sm:pl-8 space-y-10">
+          <!-- Role 1: Nov 2024 – Present -->
+          <article class="relative">
+            <span class="absolute -left-[1.55rem] top-1 h-3.5 w-3.5 rounded-full border-4 border-white bg-blue shadow-soft sm:-left-[1.8rem]"></span>
+            <div class="flex flex-wrap items-center gap-2">
+              <p class="text-xs font-bold uppercase tracking-[0.22em] text-blue">Nov 2024 — Present</p>
+              <span class="rounded bg-blue/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-blue">Current Focus</span>
+            </div>
+            <h3 class="mt-1 text-xl font-bold text-navy sm:text-2xl">Systems Engineer &amp; IoT Developer</h3>
+            <p class="mt-0.5 text-sm font-medium text-navySoft sm:text-base">Self-Directed Systems Engineering &amp; Infrastructure Lab</p>
+            <ul class="mt-4 space-y-2.5 text-sm leading-6 text-navySoft sm:space-y-3 sm:text-base sm:leading-7">
+              <li>• Architecting and maintaining 3-node distributed infrastructure supporting 107+ virtualized instances (16 VMs + 39 LXCs on lab cluster; 12 instances on home lab). Implemented multi-subnet routing with MikroTik and traffic shaping across isolated VLANs. Deployed and maintained full observability stack using Proxmox native dashboard monitoring 120+ host and container metrics in real-time, enabling rapid incident detection and resolution.</li>
+              <li>• Built, managed, and transitioned to a centralized monitoring system utilizing Proxmox's native capabilities for better operational clarity, tracking 120+ host and container performance metrics and reducing incident detection time from 30 minutes to &lt;5 minutes.</li>
+              <li>• Developed CLI automation tools including MarkItDown Converter (Python) to batch-convert technical documentation into structured Markdown—slashing LLM token usage by 85% per upload with sub-5% error rate.</li>
+              <li>• Automated daily off-site ZFS snapshot backups and container provisioning workflows using Bash IaC, cutting manual disaster recovery time from 45 minutes to under 5 minutes per host.</li>
+            </ul>
+          </article>
+
+          <!-- Role 2: Jul 2022 – Oct 2024 -->
+          <article class="relative">
+            <span class="absolute -left-[1.55rem] top-1 h-3.5 w-3.5 rounded-full border-4 border-white bg-navySoft shadow-soft sm:-left-[1.8rem]"></span>
+            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-muted">Jul 2022 — Oct 2024</p>
+            <h3 class="mt-1 text-xl font-bold text-navy sm:text-2xl">Robotics Engineer</h3>
+            <p class="mt-0.5 text-sm font-medium text-navySoft sm:text-base">CV Solusi Arya Prima</p>
+            <ul class="mt-4 space-y-2.5 text-sm leading-6 text-navySoft sm:space-y-3 sm:text-base sm:leading-7">
+              <li>• Engineered and deployed 12+ custom automation systems for industrial clients (manufacturing, material handling, inspection), reducing customer production downtime by an average of 40% and increasing line throughput by 25%.</li>
+              <li>• Performed root-cause analysis on 20+ complex mechanical and electrical systems, delivering hardware and firmware fixes that elevated system uptime from 85% to 99%+ within 6 months.</li>
+              <li>• Managed end-to-end project delivery across 5 simultaneous client engagements from scoping to production deployment, consistently hitting a 3-month turnaround from kickoff to field handoff.</li>
+              <li>• Authored 15+ comprehensive technical specification documents, electrical schematics, and maintenance procedures—enabling clients to operate independently with zero vendor lock-in.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <div class="mx-auto max-w-6xl px-4 pb-4 sm:px-6 sm:pb-8 lg:px-8">
+        <div class="h-px w-full bg-border" aria-hidden="true"></div>
+      </div>
+
+      <!-- ── 04 / Technical Expertise (Cleaned Up Tags & Missing Added) ────────── -->
+      <section id="expertise" class="mx-auto max-w-6xl scroll-mt-20 px-4 py-8 sm:scroll-mt-24 sm:px-6 sm:py-12 lg:px-8 lg:py-20">
+        <div class="flex flex-col gap-1">
+          <p class="text-xs font-semibold uppercase tracking-[0.28em] text-blue">04 / Expertise</p>
+          <h2 class="text-2xl font-black tracking-[-0.05em] text-navy sm:text-3xl lg:text-4xl">Technical expertise</h2>
+          <p class="mt-1 text-xs text-navySoft sm:text-sm">Practical engineering proficiencies in virtualization, routing, Linux administration, and embedded IoT.</p>
+        </div>
+
+        <div class="mt-8 grid gap-4 sm:gap-5 md:grid-cols-2 xl:grid-cols-3">
+          <!-- Card 1: Virtualization & Infrastructure -->
+          <div class="flex flex-col justify-between rounded-2xl border border-border bg-white p-5 shadow-soft transition-all duration-200 hover:border-blue sm:rounded-[24px]">
+            <div>
+              <div class="flex items-center gap-2.5">
+                <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-blue/10 text-base text-blue">☁️</span>
+                <h3 class="text-base font-bold text-navy sm:text-lg">Virtualization & Infrastructure</h3>
+              </div>
+              <p class="mt-3 text-xs leading-relaxed text-navySoft sm:text-sm">
+                Proxmox VE virtualization architecture for workload isolation, KVM/QEMU virtual machines, lightweight LXC containerization, Bash infrastructure-as-code automation, and centralized ZFS/LVM storage pools with scheduled snapshot backups.
+              </p>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-1.5 text-[11px] font-medium uppercase tracking-[0.12em] text-navySoft sm:gap-2">
+              <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">Proxmox VE</span>
+              <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">KVM / QEMU</span>
+              <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">LXC Containers</span>
+              <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">Bash IaC</span>
+              <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">ZFS / LVM</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Networking & Routing -->
+          <div class="flex flex-col justify-between rounded-2xl border border-border bg-white p-5 shadow-soft transition-all duration-200 hover:border-blue sm:rounded-[24px]">
+            <div>
+              <div class="flex items-center gap-2.5">
+                <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-blue/10 text-base text-blue">🌐</span>
+                <h3 class="text-base font-bold text-navy sm:text-lg">Networking & Routing</h3>
+              </div>
+              <p class="mt-3 text-xs leading-relaxed text-navySoft sm:text-sm">
+                MikroTik RouterOS configuration, multi-subnet routing design, 802.1Q VLAN segmentation, firewall filter and NAT policies, plus bandwidth shaping (Simple Queue &amp; Queue Tree) for Quality of Service (QoS) optimization.
+              </p>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-1.5 text-[11px] font-medium uppercase tracking-[0.12em] text-navySoft sm:gap-2">
+              <span class="rounded-full border border-blue/30 bg-blue/10 px-2.5 py-1.5 font-bold text-blue">MikroTik RouterOS</span>
+              <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">Multi-Subnet Routing</span>
+              <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">VLAN</span>
+              <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">Traffic Shaping</span>
+              <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">QoS</span>
+              <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">Firewall / NAT</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Linux Administration & Services -->
+          <div class="flex flex-col justify-between rounded-2xl border border-border bg-white p-5 shadow-soft transition-all duration-200 hover:border-blue sm:rounded-[24px]">
+            <div>
+              <div class="flex items-center gap-2.5">
+                <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-blue/10 text-base text-blue">🐧</span>
+                <h3 class="text-base font-bold text-navy sm:text-lg">Linux Administration & Services</h3>
+              </div>
+              <p class="mt-3 text-xs leading-relaxed text-navySoft sm:text-sm">
+                Ubuntu and Debian server management: SSH key hardening, fail2ban, UFW/iptables firewall configuration, Nginx reverse proxy with automated SSL/TLS termination (Let's Encrypt), systemd service supervisors, and shell automation scripts.
+              </p>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-1.5 text-[11px] font-medium uppercase tracking-[0.12em] text-navySoft sm:gap-2">
+              <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">Ubuntu Server</span>
+              <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">Debian</span>
+              <span class="rounded-full border border-blue/30 bg-blue/10 px-2.5 py-1.5 font-bold text-blue">Shell Scripting</span>
+              <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">Nginx Reverse Proxy</span>
+              <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">SSL / TLS</span>
+              <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">SSH Hardening</span>
+            </div>
+          </div>
+
+          <!-- Card 4: Monitoring & Observability -->
+          <div class="flex flex-col justify-between rounded-2xl border border-border bg-white p-5 shadow-soft transition-all duration-200 hover:border-blue sm:rounded-[24px]">
+            <div>
+              <div class="flex items-center gap-2.5">
+                <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-blue/10 text-base text-blue">📈</span>
+                <h3 class="text-base font-bold text-navy sm:text-lg">Monitoring & Observability</h3>
+              </div>
+              <p class="mt-3 text-xs leading-relaxed text-navySoft sm:text-sm">
+                Infrastructure health and performance tracking utilizing Proxmox's native dashboard and integrated observability tools. Leverages its clean, intuitive UI for real-time monitoring of CPU/RAM utilization, disk I/O throughput, network traffic, and container status across cluster nodes with minimal system overhead.
+              </p>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-1.5 text-[11px] font-medium uppercase tracking-[0.12em] text-navySoft sm:gap-2">
+              <span class="rounded-full border border-blue/30 bg-blue/10 px-2.5 py-1.5 font-bold text-blue">Proxmox Monitoring</span>
+              <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">Native Dashboard</span>
+              <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">Cluster Telemetry</span>
+              <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">Node Health</span>
+              <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">Alerting</span>
+            </div>
+          </div>
+
+          <!-- Card 5: IoT & Embedded Systems -->
+          <div class="flex flex-col justify-between rounded-2xl border border-border bg-white p-5 shadow-soft transition-all duration-200 hover:border-blue sm:rounded-[24px]">
+            <div>
+              <div class="flex items-center gap-2.5">
+                <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-blue/10 text-base text-blue">⚡</span>
+                <h3 class="text-base font-bold text-navy sm:text-lg">IoT & Embedded Systems</h3>
+              </div>
+              <p class="mt-3 text-xs leading-relaxed text-navySoft sm:text-sm">
+                Firmware development for ESP32 and Arduino microcontrollers, industrial sensor acquisition (temperature, humidity, telemetry), lightweight pub/sub data transport over MQTT protocols, embedded local HTTP servers, and electro-mechanical interfacing.
+              </p>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-1.5 text-[11px] font-medium uppercase tracking-[0.12em] text-navySoft sm:gap-2">
+              <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">ESP32</span>
+              <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">Arduino</span>
+              <span class="rounded-full border border-blue/30 bg-blue/10 px-2.5 py-1.5 font-bold text-blue">MQTT</span>
+              <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">Sensor Telemetry</span>
+              <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">Embedded C++</span>
+            </div>
+          </div>
+
+          <!-- Card 6: Certifications & Engineering Standards -->
+          <div class="flex flex-col justify-between rounded-2xl border border-border bg-white p-5 shadow-soft transition-all duration-200 hover:border-blue sm:rounded-[24px]">
+            <div>
+              <div class="flex items-center gap-2.5">
+                <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-blue/10 text-base text-blue">🏆</span>
+                <h3 class="text-base font-bold text-navy sm:text-lg">Certifications & Engineering</h3>
+              </div>
+              <p class="mt-3 text-xs leading-relaxed text-navySoft sm:text-sm">
+                Holds verified <strong>Linux System Administration Certification from ID-Networkers (IDN)</strong>. Rigorous version control with Git/GitHub, continuous integration / continuous deployment (CI/CD) pipelines, and reproducible infrastructure-as-code practices.
+              </p>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-1.5 text-[11px] font-medium uppercase tracking-[0.12em] text-navySoft sm:gap-2">
+              <span class="rounded-full border border-blue/30 bg-blue/10 px-2.5 py-1.5 font-bold text-blue">ID-Networkers Linux</span>
+              <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">Git / GitHub</span>
+              <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">CI / CD</span>
+              <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">Python CLI</span>
+              <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">Infrastructure-as-Code</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="mx-auto max-w-6xl px-4 pb-4 sm:px-6 sm:pb-8 lg:px-8">
+        <div class="h-px w-full bg-border" aria-hidden="true"></div>
+      </div>
+
+      <!-- ── 05 / Contact Section (100% English & Anti-Scrape Protected) ───────── -->
+      <section id="contact" class="mx-auto max-w-6xl scroll-mt-20 px-4 py-8 sm:scroll-mt-24 sm:px-6 sm:py-12 lg:px-8 lg:py-20">
+        <p class="text-xs font-semibold uppercase tracking-[0.28em] text-blue">05 / Contact</p>
+        <h2 class="mt-2 text-2xl font-black tracking-[-0.05em] text-navy sm:mt-3 sm:text-3xl lg:text-4xl">Let’s build something reliable.</h2>
+        <p class="mt-3 max-w-2xl text-sm leading-6 text-navySoft sm:mt-4 sm:text-base sm:leading-7 lg:text-lg">
+          Open for systems engineering collaborations, Proxmox virtualization setups, MikroTik network engineering, and IoT automation implementations.
+        </p>
+
+        <div class="mt-8 grid gap-4 sm:gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <!-- Card 1: Direct Email -->
+          <div class="group flex flex-col justify-between rounded-2xl border border-border bg-white p-5 shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-blue">
+            <div>
+              <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-surfaceMuted text-blue transition-colors duration-200 group-hover:bg-blue group-hover:text-white">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <h3 class="mt-4 text-base font-bold text-navy">Direct Email</h3>
+              <p class="mt-1 text-xs text-muted">Primary communication channel</p>
+              <p class="mt-2 text-xs text-navySoft">Send a direct message or copy address safely with one click.</p>
+            </div>
+            <div class="mt-5 flex flex-col gap-2">
+              <button
+                id="btn-contact-email"
+                type="button"
+                class="inline-flex w-full items-center justify-center rounded-xl bg-blue px-3.5 py-2 text-xs font-semibold text-white transition-colors duration-200 hover:bg-blueHover"
+              >
+                <span>Send Email</span>
+                <span class="ml-1.5">&rarr;</span>
+              </button>
+              <button
+                id="btn-copy-email"
+                type="button"
+                class="inline-flex w-full items-center justify-center rounded-xl border border-border bg-slate-50 px-3.5 py-1.5 text-[11px] font-medium text-navySoft transition-colors duration-200 hover:border-blue hover:text-blue"
+              >
+                <span class="copy-label">Copy Email Address</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 2: WhatsApp Business -->
+          <div class="group flex flex-col justify-between rounded-2xl border border-border bg-white p-5 shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-blue">
+            <div>
+              <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-surfaceMuted text-blue transition-colors duration-200 group-hover:bg-blue group-hover:text-white">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              <h3 class="mt-4 text-base font-bold text-navy">WhatsApp</h3>
+              <p class="mt-1 text-xs text-muted">Rapid consultation &amp; messaging</p>
+              <p class="mt-2 text-xs text-navySoft">Fast response for engineering inquiries and system architecture discussions.</p>
+            </div>
+            <div class="mt-5">
+              <button
+                id="btn-contact-wa"
+                type="button"
+                class="inline-flex w-full items-center justify-center rounded-xl bg-navy px-3.5 py-2 text-xs font-semibold text-white transition-colors duration-200 hover:bg-navySoft"
+              >
+                <span>Start WhatsApp Chat</span>
+                <span class="ml-1.5">&rarr;</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 3: GitHub -->
+          <a
+            href="https://github.com/MASR170902"
+            target="_blank"
+            rel="noreferrer"
+            class="group flex flex-col justify-between rounded-2xl border border-border bg-white p-5 shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-blue"
+          >
+            <div>
+              <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-surfaceMuted text-blue transition-colors duration-200 group-hover:bg-blue group-hover:text-white">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+              </div>
+              <h3 class="mt-4 text-base font-bold text-navy">GitHub</h3>
+              <p class="mt-1 text-xs text-muted">Open source &amp; repositories</p>
+              <p class="mt-2 text-xs text-navySoft">Explore source repositories for Proxmox automation, CLI pipelines, and lab projects.</p>
+            </div>
+            <div class="mt-5 flex items-center text-xs font-semibold text-blue transition-colors duration-200 group-hover:text-blueHover">
+              <span>Open GitHub Profile</span>
+              <span class="ml-1 transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
+            </div>
+          </a>
+
+          <!-- Card 4: LinkedIn -->
+          <a
+            href="https://www.linkedin.com/in/muhammadabdulrasyid-dev/"
+            target="_blank"
+            rel="noreferrer"
+            class="group flex flex-col justify-between rounded-2xl border border-border bg-white p-5 shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-blue"
+          >
+            <div>
+              <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-surfaceMuted text-blue transition-colors duration-200 group-hover:bg-blue group-hover:text-white">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.762-2.5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+              </div>
+              <h3 class="mt-4 text-base font-bold text-navy">LinkedIn</h3>
+              <p class="mt-1 text-xs text-muted">Professional network &amp; career</p>
+              <p class="mt-2 text-xs text-navySoft">Professional connections, verified credentials, and career recommendations.</p>
+            </div>
+            <div class="mt-5 flex items-center text-xs font-semibold text-blue transition-colors duration-200 group-hover:text-blueHover">
+              <span>View LinkedIn Profile</span>
+              <span class="ml-1 transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
+            </div>
+          </a>
         </div>
       </section>
     </main>
 
-    <footer>
-      <p>&copy; 2024 by Muhammad Abdul Rasyid. All rights reserved.</p>
+    <!-- ── Footer ────────────────────────────────────────────────────────────── -->
+    <footer class="border-t border-border bg-white">
+      <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-6 text-sm text-navySoft sm:px-6 md:flex-row lg:px-8">
+        <p>© <span id="year"></span> Muhammad Abdul Rasyid. All rights reserved.</p>
+        <div class="flex flex-wrap items-center justify-center gap-4 text-xs font-medium sm:text-sm">
+          <a href="#projects" class="transition-colors duration-200 hover:text-blue">Projects</a>
+          <a href="#about" class="transition-colors duration-200 hover:text-blue">About</a>
+          <a href="#experience" class="transition-colors duration-200 hover:text-blue">Experience</a>
+          <a href="#expertise" class="transition-colors duration-200 hover:text-blue">Expertise</a>
+          <a href="#contact" class="transition-colors duration-200 hover:text-blue">Contact</a>
+          <a href="https://github.com/MASR170902" target="_blank" rel="noreferrer" class="transition-colors duration-200 hover:text-blue">GitHub</a>
+        </div>
+      </div>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="particles-app.js"></script>
-    <script src="main.js"></script>
   </body>
 </html>

@@ -1,0 +1,36 @@
+# Muhammad Abdul Rasyid - Engineering Portfolio
+
+> Systems Engineer, Robotics Engineer, and IoT Developer specializing in Proxmox VE distributed infrastructure, native observability, MikroTik networking, Linux server administration, and embedded IoT systems.
+
+## Summary
+
+Muhammad Abdul Rasyid is a systems engineer based in Purbalingga, Central Java, Indonesia. His work bridges physical embedded hardware and robust server infrastructure with a core focus on production reliability, infrastructure-as-code automation, and centralized native monitoring.
+
+## Core Navigation
+
+- [Home](https://dashboardserver.abdulrasyid.my.id/#hero): Professional introduction and end-to-end system architecture overview.
+- [Projects](https://dashboardserver.abdulrasyid.my.id/#projects): Featured technical implementations across hypervisors, networks, servers, IoT telemetry, and CLI pipelines.
+- [About](https://dashboardserver.abdulrasyid.my.id/#about): Engineering philosophy, background, and core competency pillars.
+- [Experience](https://dashboardserver.abdulrasyid.my.id/#experience): Detailed career timeline and technical impact metrics.
+- [Technical Expertise](https://dashboardserver.abdulrasyid.my.id/#expertise): Categorized proficiencies in virtualization, routing, Linux administration, and embedded IoT.
+- [Contact](https://dashboardserver.abdulrasyid.my.id/#contact): Direct contact channels including Email, WhatsApp, GitHub, and LinkedIn.
+
+## Featured Projects
+
+- [Proxmox Automation with Bash](https://github.com/MASR170902/Proxmox-automation): Bash IaC automation scripts for provisioning VMs/LXCs, storage pools (ZFS), and VLAN networks in Proxmox VE. Reduces setup time from 30 minutes to under 3 minutes per instance.
+- [ProxMenuX Monitor](https://dashboardserver.abdulrasyid.my.id/): Centralized multi-node Proxmox cluster observability utilizing built-in native dashboards for real-time CPU, RAM, storage throughput, and container health telemetry.
+- [Linux Server Admin & Monitoring Stack](https://dashboardserver.abdulrasyid.my.id/#projects): Production Ubuntu and Debian administration featuring SSH hardening, UFW firewall, Nginx reverse proxy with SSL/TLS termination, Docker Compose stacks, and Proxmox integrated telemetry.
+- [IoT Room Temperature Monitor](https://dashboardserver.abdulrasyid.my.id/#projects): Wireless environmental telemetry node using ESP32 and DHT11 sensors transmitting data via MQTT every 5 minutes with 99.9% uptime.
+- [Website Lab: Lab Management Platform](https://github.com/MASR170902/website-lab): Web platform for the PNS Lab at Telkom University Purwokerto, built with Next.js 16, Server Actions, db.json storage, and hosted in an Ubuntu LXC container with scheduled auto-backups.
+- [MarkItDown Converter](https://github.com/MASR170902/converter_markitdown): Python CLI utility for batch converting PDF, DOCX, XLSX, and media files into structured Markdown, reducing LLM token consumption by 85% per upload.
+
+## Experience
+
+- **Systems Engineer & IoT Developer (Nov 2024 - Present)**: Architecting and maintaining a 3-node distributed infrastructure supporting 107+ virtualized instances (16 VMs + 39 LXCs on lab cluster; 12 instances on home lab). Implemented multi-subnet routing with MikroTik, QoS traffic shaping, and transitioned to Proxmox native monitoring for better operational clarity.
+- **Robotics Engineer at CV Solusi Arya Prima (Jul 2022 - Oct 2024)**: Engineered and deployed 12+ custom industrial automation systems, reducing customer production downtime by 40% and increasing throughput by 25%. Performed root-cause analysis on 20+ complex mechanical and electrical assemblies.
+
+## Verified Credentials & Socials
+
+- GitHub: [MASR170902](https://github.com/MASR170902)
+- LinkedIn: [muhammadabdulrasyid-dev](https://www.linkedin.com/in/muhammadabdulrasyid-dev/)
+- Certification: Linux System Administration from ID-Networkers (IDN)

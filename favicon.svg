@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="marGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#20334F"/>
+      <stop offset="100%" stop-color="#142134"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#marGrad)"/>
+  <rect x="2.5" y="2.5" width="59" height="59" rx="12" fill="none" stroke="#2676F3" stroke-width="2.5" opacity="0.9"/>
+  <text x="32" y="41" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="20" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">MAR<tspan fill="#2676F3">.</tspan></text>
+</svg>
+
