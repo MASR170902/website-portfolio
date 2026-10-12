@@ -226,7 +226,7 @@ export function generateAndDownloadCV() {
     doc.setFontSize(7.5);
     doc.setTextColor(...COLOR_MUTED);
     doc.text(
-      'Muhammad Abdul Rasyid  •  Curriculum Vitae  •  https://dashboardserver.abdulrasyid.my.id/',
+      'Muhammad Abdul Rasyid  •  Curriculum Vitae  •  https://abdulrasyid.my.id/',
       marginX,
       pageHeight - 8
     );
