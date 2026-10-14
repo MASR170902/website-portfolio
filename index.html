@@ -28,7 +28,7 @@
   </head>
   <body class="bg-slatebg text-navy antialiased selection:bg-blue/15 selection:text-blue">
     <!-- ── Header & Navigation ────────────────────────────────────────────────── -->
-    <header class="sticky top-0 z-50 border-b border-border/80 bg-white/95 backdrop-blur-md">
+    <header class="sticky top-0 relative z-50 border-b border-border/80 bg-white/80 backdrop-blur-md transition-colors">
       <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <a href="#hero" class="text-lg font-black tracking-[0.2em] text-navy focus-visible:outline-blue" aria-label="Muhammad Abdul Rasyid home">
           MAR<span class="text-blue">.</span>
@@ -62,7 +62,7 @@
         <button
           id="nav-toggle"
           type="button"
-          class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-slate-50 text-navy transition-colors hover:border-blue hover:text-blue focus-visible:outline-blue md:hidden"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border/80 bg-white/60 backdrop-blur-sm text-navy transition-colors hover:border-blue hover:text-blue focus-visible:outline-blue md:hidden"
           aria-label="Open navigation menu"
           aria-expanded="false"
         >
@@ -78,35 +78,35 @@
         </button>
       </div>
 
-      <!-- Mobile Full-Width Menu Drawer -->
-      <nav id="nav-menu" class="hidden border-t border-border bg-white px-4 py-3.5 shadow-soft md:hidden">
+      <!-- Mobile Full-Width Menu Drawer (Translucent Glassmorphism Overlay) -->
+      <nav id="nav-menu" class="hidden absolute top-full left-0 right-0 w-full border-b border-border/80 bg-white/75 backdrop-blur-xl px-4 py-3.5 shadow-soft md:hidden max-h-[calc(100vh-4.5rem)] overflow-y-auto">
         <ul class="flex flex-col gap-1">
           <li>
-            <a href="#projects" class="mobile-nav-link flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm font-semibold text-navySoft transition-colors hover:bg-slate-50 hover:text-blue">
+            <a href="#projects" class="mobile-nav-link flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm font-semibold text-navySoft transition-colors hover:bg-blue/10 hover:text-blue active:bg-blue/15">
               <span>01 / Projects</span>
               <span class="text-xs text-muted">&rarr;</span>
             </a>
           </li>
           <li>
-            <a href="#about" class="mobile-nav-link flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm font-semibold text-navySoft transition-colors hover:bg-slate-50 hover:text-blue">
+            <a href="#about" class="mobile-nav-link flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm font-semibold text-navySoft transition-colors hover:bg-blue/10 hover:text-blue active:bg-blue/15">
               <span>02 / About</span>
               <span class="text-xs text-muted">&rarr;</span>
             </a>
           </li>
           <li>
-            <a href="#experience" class="mobile-nav-link flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm font-semibold text-navySoft transition-colors hover:bg-slate-50 hover:text-blue">
+            <a href="#experience" class="mobile-nav-link flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm font-semibold text-navySoft transition-colors hover:bg-blue/10 hover:text-blue active:bg-blue/15">
               <span>03 / Experience</span>
               <span class="text-xs text-muted">&rarr;</span>
             </a>
           </li>
           <li>
-            <a href="#expertise" class="mobile-nav-link flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm font-semibold text-navySoft transition-colors hover:bg-slate-50 hover:text-blue">
+            <a href="#expertise" class="mobile-nav-link flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm font-semibold text-navySoft transition-colors hover:bg-blue/10 hover:text-blue active:bg-blue/15">
               <span>04 / Technical Expertise</span>
               <span class="text-xs text-muted">&rarr;</span>
             </a>
           </li>
           <li>
-            <a href="#contact" class="mobile-nav-link flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm font-semibold text-navySoft transition-colors hover:bg-slate-50 hover:text-blue">
+            <a href="#contact" class="mobile-nav-link flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm font-semibold text-navySoft transition-colors hover:bg-blue/10 hover:text-blue active:bg-blue/15">
               <span>05 / Contact</span>
               <span class="text-xs text-muted">&rarr;</span>
             </a>
@@ -114,7 +114,7 @@
           <li class="pt-2">
             <button
               type="button"
-              class="btn-download-cv flex w-full items-center justify-center gap-2 rounded-xl bg-blue px-4 py-2.5 text-sm font-bold text-white transition-colors hover:bg-blueHover"
+              class="btn-download-cv flex w-full items-center justify-center gap-2 rounded-xl bg-blue px-4 py-2.5 text-sm font-bold text-white shadow-sm transition-colors hover:bg-blueHover active:scale-[0.99]"
               aria-label="Generate and download Curriculum Vitae PDF"
             >
               <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
