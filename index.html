@@ -131,29 +131,29 @@
 
     <main>
       <!-- ── Hero Section ──────────────────────────────────────────────────────── -->
-      <section id="hero" class="mx-auto max-w-6xl scroll-mt-20 px-4 pb-12 pt-8 sm:scroll-mt-24 sm:px-6 sm:pb-16 sm:pt-12 lg:px-8 lg:pb-20 lg:pt-16">
+      <section id="hero" class="mx-auto max-w-6xl scroll-mt-20 px-4 py-16 sm:scroll-mt-24 sm:px-6 lg:px-8">
         <div class="grid items-center gap-8 sm:gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-          <div>
+          <div class="flex flex-col gap-6">
             <div class="flex items-center gap-2">
               <span class="inline-block h-2 w-2 rounded-full bg-emerald-500"></span>
               <p class="text-xs font-semibold uppercase tracking-[0.25em] text-blue">Purbalingga, Central Java &bull; Available for Projects</p>
             </div>
-            <h1 class="mt-3 text-3xl font-black tracking-[-0.05em] text-navy sm:text-5xl lg:text-6xl">
+            <h1 class="text-3xl font-black tracking-[-0.05em] text-navy sm:text-5xl lg:text-6xl">
               Building systems.<br />
               <span class="text-blue">Making them work.</span>
             </h1>
 
-            <div class="mt-5 flex flex-wrap gap-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-blue sm:mt-6 sm:gap-2.5 sm:text-xs">
+            <div class="flex flex-wrap gap-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-blue sm:gap-2.5 sm:text-xs">
               <span class="rounded-full border border-blue/25 bg-blue/5 px-3 py-1.5 sm:py-2">Robotics Engineer</span>
               <span class="rounded-full border border-blue/25 bg-blue/5 px-3 py-1.5 sm:py-2">IoT Developer</span>
               <span class="rounded-full border border-blue/25 bg-blue/5 px-3 py-1.5 sm:py-2">System Administrator</span>
             </div>
 
-            <p class="mt-6 max-w-xl text-sm leading-6 text-navySoft sm:mt-8 sm:text-base sm:leading-7 lg:text-lg text-justify">
+            <p class="prose-copy text-justify leading-relaxed max-w-xl text-sm sm:text-base lg:text-lg">
               Systems engineer connecting edge hardware to server infrastructure: from telemetry sensors and microcontrollers to Proxmox virtualization, MikroTik routing, Bash automation, and operational observability.
             </p>
 
-            <div class="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-center">
+            <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
               <a href="#projects" class="inline-flex items-center justify-center rounded-xl bg-blue px-5 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-blueHover">
                 View Technical Projects
               </a>
@@ -174,7 +174,7 @@
               </a>
             </div>
 
-            <div class="mt-6 flex flex-wrap items-center gap-4 text-sm font-medium text-navySoft sm:mt-8">
+            <div class="flex flex-wrap items-center gap-4 text-sm font-medium text-navySoft">
               <span class="text-xs uppercase tracking-wider text-muted">Find me on:</span>
               <a href="https://github.com/MASR170902" target="_blank" rel="noreferrer" class="font-semibold text-navy transition-colors duration-200 hover:text-blue">GitHub ↗</a>
               <a href="https://www.linkedin.com/in/muhammadabdulrasyid-dev/" target="_blank" rel="noreferrer" class="font-semibold text-navy transition-colors duration-200 hover:text-blue">LinkedIn ↗</a>
@@ -266,60 +266,60 @@
         </div>
       </section>
 
-      <div class="mx-auto max-w-6xl px-4 pb-4 sm:px-6 sm:pb-8 lg:px-8">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div class="h-px w-full bg-border" aria-hidden="true"></div>
       </div>
 
       <!-- ── 01 / Featured Projects (With Visual UI Mockups) ───────────────────── -->
-      <section id="projects" class="mx-auto max-w-6xl scroll-mt-20 px-4 py-8 sm:scroll-mt-24 sm:px-6 sm:py-12 lg:px-8 lg:py-20">
-        <div class="flex flex-col gap-1">
+      <section id="projects" class="mx-auto flex max-w-6xl scroll-mt-20 flex-col gap-8 px-4 py-16 sm:scroll-mt-24 sm:px-6 lg:px-8">
+        <div class="flex flex-col gap-2">
           <p class="text-xs font-semibold uppercase tracking-[0.28em] text-blue">01 / Projects</p>
           <h2 class="text-2xl font-black tracking-[-0.05em] text-navy sm:text-3xl lg:text-4xl">Featured engineering projects</h2>
-          <p class="mt-1 text-xs text-navySoft sm:text-sm">Battle-tested implementations across hypervisors, networks, servers, IoT telemetry, and CLI pipelines.</p>
+          <p class="prose-copy text-justify leading-relaxed text-xs sm:text-sm">Battle-tested implementations across hypervisors, networks, servers, IoT telemetry, and CLI pipelines.</p>
         </div>
 
-        <div class="mt-8 grid gap-6 sm:gap-7 md:grid-cols-2 xl:grid-cols-3">
+        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           <!-- Project 1: Proxmox Automation -->
-          <article class="group flex flex-col justify-between overflow-hidden rounded-2xl border border-border bg-white shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-blue sm:rounded-[26px]">
+          <article class="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-blue sm:rounded-[26px]">
             <div>
               <!-- Visual Mockup: Terminal Automation & Provisioning Pipeline -->
-              <div class="border-b border-border bg-[#151D2A] p-3 text-white">
+              <div class="border-b border-border bg-[#151D2A] flex min-h-[13rem] flex-col justify-center p-3 text-white">
                 <div class="flex items-center justify-between pb-2">
                   <div class="flex items-center gap-1.5">
                     <span class="h-2.5 w-2.5 rounded-full bg-red-500/80"></span>
                     <span class="h-2.5 w-2.5 rounded-full bg-amber-500/80"></span>
                     <span class="h-2.5 w-2.5 rounded-full bg-emerald-500/80"></span>
-                    <span class="ml-2 font-mono text-[10px] text-slate-400">bash provision_vm.sh --template debian12</span>
+                    <span class="ml-2 font-mono text-[10px] text-slate-400">provision_vm.sh --debian12</span>
                   </div>
-                  <span class="rounded bg-emerald-500/20 px-1.5 py-0.5 font-mono text-[9px] font-bold text-emerald-400">READY IN 2m 48s</span>
+                  <span class="shrink-0 whitespace-nowrap rounded bg-emerald-500/20 px-1.5 py-0.5 font-mono text-[9px] font-bold text-emerald-400">READY IN 2m 48s</span>
                 </div>
                 <!-- Architecture flow steps -->
                 <div class="mt-2 space-y-1 font-mono text-[11px] leading-relaxed text-slate-300">
                   <p class="text-emerald-400">&gt; User create template &rarr; Auto-provision VM</p>
-                  <p class="text-slate-400">&gt; Allocating ZFS storage pool &amp; VLAN 20 subnet...</p>
+                  <p class="text-slate-400">&gt; Allocating ZFS pool &amp; VLAN 20 subnet</p>
                   <p class="text-blue">&gt; Injected Cloud-Init SSH keys &amp; static IPv4</p>
                   <div class="mt-2 flex items-center justify-between rounded bg-[#0D1420] px-2.5 py-1.5 text-[10px]">
-                    <span class="text-slate-400">Manual Setup: <span class="text-red-400 font-bold">30 min</span></span>
+                    <span class="whitespace-nowrap text-slate-400">Manual: <span class="text-red-400 font-bold">30 min</span></span>
                     <span class="text-slate-400">&rarr;</span>
-                    <span class="text-emerald-400 font-bold">Automated: 3 min (90% faster)</span>
+                    <span class="whitespace-nowrap text-emerald-400 font-bold">Auto: 3 min (90% faster)</span>
                   </div>
                 </div>
               </div>
 
               <!-- Card Body -->
-              <div class="p-5">
-                <div class="flex items-center justify-between">
-                  <span class="rounded-full bg-blue/10 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-blue">Infrastructure as Code</span>
-                  <a href="https://github.com/MASR170902/Proxmox-automation" target="_blank" rel="noreferrer" class="text-xs font-semibold uppercase tracking-[0.18em] text-blue transition-colors duration-200 hover:text-blueHover">github.com ↗</a>
+              <div class="p-6">
+                <div class="flex items-center justify-between gap-3">
+                  <span class="rounded-full bg-blue/10 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-blue">Infra as Code</span>
+                  <a href="https://github.com/MASR170902/Proxmox-automation" target="_blank" rel="noreferrer" class="shrink-0 whitespace-nowrap text-xs font-semibold uppercase tracking-[0.18em] text-blue transition-colors duration-200 hover:text-blueHover">github.com ↗</a>
                 </div>
                 <h3 class="mt-3 text-lg font-bold text-navy sm:text-xl">Proxmox Automation with Bash</h3>
-                <p class="mt-2.5 text-sm leading-6 text-navySoft text-justify">
+                <p class="project-description prose-copy text-justify leading-relaxed mt-2.5 text-sm text-navySoft">
                   Automated LXC container and user management suite for Proxmox VE built with professional Bash scripts. Driven by users.txt and centralized config.cfg settings, it enables bulk creation, safe purge removal, power control, and auto-boot scheduling with interactive menus, real-time progress tracking, strict regex validation, and post-operation summary reports.
                 </p>
               </div>
             </div>
 
-            <div class="border-t border-border/60 bg-slate-50/50 p-5 pt-3">
+            <div class="mt-auto border-t border-border/60 bg-slate-50/50 p-6">
               <div class="flex flex-wrap gap-1.5 text-[11px] font-medium uppercase tracking-[0.12em] text-navySoft sm:gap-2">
                 <span class="rounded-full border border-border bg-white px-2.5 py-1">Proxmox VE</span>
                 <span class="rounded-full border border-border bg-white px-2.5 py-1">Bash</span>
@@ -331,10 +331,10 @@
           </article>
 
           <!-- Project 2: ProxMenux Monitor -->
-          <article class="group flex flex-col justify-between overflow-hidden rounded-2xl border border-border bg-white shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-blue sm:rounded-[26px]">
+          <article class="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-blue sm:rounded-[26px]">
             <div>
               <!-- Visual Mockup: Proxmox Native Multi-Node Cluster Dashboard -->
-              <div class="border-b border-border bg-[#101827] p-3 text-white">
+              <div class="border-b border-border bg-[#101827] flex min-h-[13rem] flex-col justify-center p-3 text-white">
                 <div class="flex items-center justify-between pb-2">
                   <div class="flex items-center gap-1.5">
                     <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
@@ -373,19 +373,19 @@
               </div>
 
               <!-- Card Body -->
-              <div class="p-5">
-                <div class="flex items-center justify-between">
+              <div class="p-6">
+                <div class="flex items-center justify-between gap-3">
                   <span class="rounded-full bg-blue/10 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-blue">Real-Time Observability</span>
-                  <a href="https://proxmoxmenu.abdulrasyid.my.id/" target="_blank" rel="noreferrer" class="text-xs font-semibold uppercase tracking-[0.18em] text-blue transition-colors duration-200 hover:text-blueHover">live demo ↗</a>
+                  <a href="https://proxmoxmenu.abdulrasyid.my.id/" target="_blank" rel="noreferrer" class="shrink-0 whitespace-nowrap text-xs font-semibold uppercase tracking-[0.18em] text-blue transition-colors duration-200 hover:text-blueHover">live demo ↗</a>
                 </div>
                 <h3 class="mt-3 text-lg font-bold text-navy sm:text-xl">ProxMenux Monitor (System Dashboard)</h3>
-                <p class="mt-2.5 text-sm leading-6 text-navySoft text-justify">
-                  ProxMenux Monitor (atau ProxMenux Monitor: System Dashboard) A feature-rich custom management and monitoring web dashboard for Proxmox VE environments. Consolidates real-time node telemetry (CPU load, RAM, network throughput, and hardware temperature) alongside live VM & LXC resource tracking. Features physical disk S.M.A.R.T health monitoring, automated & manual backup management, and an integrated web terminal for seamless host control—all in a unified, modern interface.
+                <p class="project-description prose-copy text-justify leading-relaxed mt-2.5 text-sm text-navySoft">
+                  A feature-rich custom management and monitoring web dashboard for Proxmox VE environments. Consolidates real-time node telemetry (CPU load, RAM, network throughput, and hardware temperature) alongside live VM & LXC resource tracking. Features physical disk S.M.A.R.T health monitoring, automated & manual backup management, and an integrated web terminal for seamless host control—all in a unified, modern interface.
                 </p>
               </div>
             </div>
 
-            <div class="border-t border-border/60 bg-slate-50/50 p-5 pt-3">
+            <div class="mt-auto border-t border-border/60 bg-slate-50/50 p-6">
               <div class="flex flex-wrap gap-1.5 text-[11px] font-medium uppercase tracking-[0.12em] text-navySoft sm:gap-2">
                 <span class="rounded-full border border-border bg-white px-2.5 py-1">Proxmox UI</span>
                 <span class="rounded-full border border-border bg-white px-2.5 py-1">Native Monitoring</span>
@@ -397,10 +397,10 @@
           </article>
 
           <!-- Project 3: Linux Server Admin & Monitoring Stack -->
-          <article class="group flex flex-col justify-between overflow-hidden rounded-2xl border border-border bg-white shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-blue sm:rounded-[26px]">
+          <article class="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-blue sm:rounded-[26px]">
             <div>
               <!-- Visual Mockup: Server Architecture & SSL Reverse Proxy Flow -->
-              <div class="border-b border-border bg-[#101827] p-3 text-white">
+              <div class="border-b border-border bg-[#101827] flex min-h-[13rem] flex-col justify-center p-3 text-white">
                 <div class="flex items-center justify-between pb-2">
                   <span class="font-mono text-[10px] font-bold text-slate-300">SERVER STACK ARCHITECTURE</span>
                   <span class="rounded bg-emerald-500/20 px-1.5 py-0.5 font-mono text-[9px] text-emerald-400">HARDENED</span>
@@ -434,19 +434,19 @@
               </div>
 
               <!-- Card Body -->
-              <div class="p-5">
-                <div class="flex items-center justify-between">
-                  <span class="rounded-full bg-blue/10 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-blue">Linux Production Stack</span>
-                  <span class="text-xs font-semibold uppercase tracking-[0.18em] text-blue">Verified Lab</span>
+              <div class="p-6">
+                <div class="flex items-center justify-between gap-3">
+                  <span class="rounded-full bg-blue/10 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-blue">Linux Stack</span>
+                  <span class="shrink-0 whitespace-nowrap text-xs font-semibold uppercase tracking-[0.18em] text-blue">Verified Lab</span>
                 </div>
                 <h3 class="mt-3 text-lg font-bold text-navy sm:text-xl">Linux Server Admin & Monitoring Stack</h3>
-                <p class="mt-2.5 text-sm leading-6 text-navySoft text-justify">
+                <p class="project-description prose-copy text-justify leading-relaxed mt-2.5 text-sm text-navySoft">
                   Ubuntu &amp; Debian server administration: SSH hardening, UFW firewall, Nginx reverse proxy with automated SSL/TLS termination, and containerized Docker services. Utilizes Proxmox's integrated monitoring system for clear, intuitive host and container telemetry.
                 </p>
               </div>
             </div>
 
-            <div class="border-t border-border/60 bg-slate-50/50 p-5 pt-3">
+            <div class="mt-auto border-t border-border/60 bg-slate-50/50 p-6">
               <div class="flex flex-wrap gap-1.5 text-[11px] font-medium uppercase tracking-[0.12em] text-navySoft sm:gap-2">
                 <span class="rounded-full border border-border bg-white px-2.5 py-1">Ubuntu</span>
                 <span class="rounded-full border border-border bg-white px-2.5 py-1">Nginx</span>
@@ -459,10 +459,10 @@
           </article>
 
           <!-- Project 5: Website Lab -->
-          <article class="group flex flex-col justify-between overflow-hidden rounded-2xl border border-border bg-white shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-blue sm:rounded-[26px]">
+          <article class="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-blue sm:rounded-[26px]">
             <div>
               <!-- Visual Mockup: Lab Operations Management Portal -->
-              <div class="border-b border-border bg-[#101827] p-3 text-white">
+              <div class="border-b border-border bg-[#101827] flex min-h-[13rem] flex-col justify-center p-3 text-white">
                 <div class="flex items-center justify-between pb-1.5">
                   <span class="font-mono text-[10px] font-bold text-slate-300">PNS LAB • TELKOM UNIV PURWOKERTO</span>
                   <span class="rounded bg-emerald-500/20 px-1.5 py-0.5 font-mono text-[9px] text-emerald-400">NEXT.js 16 SSR</span>
@@ -485,19 +485,19 @@
               </div>
 
               <!-- Card Body -->
-              <div class="p-5">
-                <div class="flex items-center justify-between">
-                  <span class="rounded-full bg-blue/10 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-blue">Full-Stack Lab System</span>
-                  <a href="https://github.com/MASR170902/website-lab" target="_blank" rel="noreferrer" class="text-xs font-semibold uppercase tracking-[0.18em] text-blue transition-colors duration-200 hover:text-blueHover">github.com ↗</a>
+              <div class="p-6">
+                <div class="flex items-center justify-between gap-3">
+                  <span class="rounded-full bg-blue/10 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-blue">Full-Stack Lab</span>
+                  <a href="https://github.com/MASR170902/website-lab" target="_blank" rel="noreferrer" class="shrink-0 whitespace-nowrap text-xs font-semibold uppercase tracking-[0.18em] text-blue transition-colors duration-200 hover:text-blueHover">github.com ↗</a>
                 </div>
                 <h3 class="mt-3 text-lg font-bold text-navy sm:text-xl">Website Lab: Lab Management Platform</h3>
-                <p class="mt-2.5 text-sm leading-6 text-navySoft text-justify">
+                <p class="project-description prose-copy text-justify leading-relaxed mt-2.5 text-sm text-navySoft">
                   A web platform for the PNS Lab at Telkom University Purwokerto, featuring lab profiles, research areas, practicum documentation, and publications. It is built using Next.js 16 and Server Actions, utilizes <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-navy font-semibold">db.json</code> for data storage (chosen intentionally for low-overhead deployment on LXC without requiring a full database stack), and is hosted in an Ubuntu LXC container with scheduled auto-backups.
                 </p>
               </div>
             </div>
 
-            <div class="border-t border-border/60 bg-slate-50/50 p-5 pt-3">
+            <div class="mt-auto border-t border-border/60 bg-slate-50/50 p-6">
               <div class="flex flex-wrap gap-1.5 text-[11px] font-medium uppercase tracking-[0.12em] text-navySoft sm:gap-2">
                 <span class="rounded-full border border-border bg-white px-2.5 py-1">Next.js 16</span>
                 <span class="rounded-full border border-border bg-white px-2.5 py-1">db.json</span>
@@ -508,10 +508,10 @@
           </article>
 
           <!-- Project 6: Converter MarkItDown -->
-          <article class="group flex flex-col justify-between overflow-hidden rounded-2xl border border-border bg-white shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-blue sm:rounded-[26px]">
+          <article class="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-blue sm:rounded-[26px]">
             <div>
               <!-- Visual Mockup: Token Optimization Pipeline & CLI Output -->
-              <div class="border-b border-border bg-[#101827] p-3 text-white">
+              <div class="border-b border-border bg-[#101827] flex min-h-[13rem] flex-col justify-center p-3 text-white">
                 <div class="flex items-center justify-between pb-1.5">
                   <span class="font-mono text-[10px] font-bold text-slate-300">MARKITDOWN AI PIPELINE</span>
                   <span class="rounded bg-emerald-500/20 px-1.5 py-0.5 font-mono text-[9px] font-bold text-emerald-400">84% COST SAVING</span>
@@ -537,19 +537,19 @@
               </div>
 
               <!-- Card Body -->
-              <div class="p-5">
-                <div class="flex items-center justify-between">
+              <div class="p-6">
+                <div class="flex items-center justify-between gap-3">
                   <span class="rounded-full bg-blue/10 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-blue">AI-Optimized CLI</span>
-                  <a href="https://github.com/MASR170902/converter_markitdown" target="_blank" rel="noreferrer" class="text-xs font-semibold uppercase tracking-[0.18em] text-blue transition-colors duration-200 hover:text-blueHover">github.com ↗</a>
+                  <a href="https://github.com/MASR170902/converter_markitdown" target="_blank" rel="noreferrer" class="shrink-0 whitespace-nowrap text-xs font-semibold uppercase tracking-[0.18em] text-blue transition-colors duration-200 hover:text-blueHover">github.com ↗</a>
                 </div>
                 <h3 class="mt-3 text-lg font-bold text-navy sm:text-xl">MarkItDown Converter: AI File Pipeline</h3>
-                <p class="mt-2.5 text-sm leading-6 text-navySoft text-justify">
+                <p class="project-description prose-copy text-justify leading-relaxed mt-2.5 text-sm text-navySoft">
                   Python CLI utility for batch converting PDF, DOCX, XLSX, PPTX, and media files into structured Markdown—reducing LLM token consumption by 85% per upload. Example: 50MB PDF report = 5,000 tokens &rarr; 800 tokens per document. Processed 1,000+ documents across team projects with sub-5% error rate.
                 </p>
               </div>
             </div>
 
-            <div class="border-t border-border/60 bg-slate-50/50 p-5 pt-3">
+            <div class="mt-auto border-t border-border/60 bg-slate-50/50 p-6">
               <div class="flex flex-wrap gap-1.5 text-[11px] font-medium uppercase tracking-[0.12em] text-navySoft sm:gap-2">
                 <span class="rounded-full border border-border bg-white px-2.5 py-1">Python</span>
                 <span class="rounded-full border border-border bg-white px-2.5 py-1">CLI</span>
@@ -561,10 +561,10 @@
           </article>
 
           <!-- Project 7: Turnitout -->
-          <article class="group flex flex-col justify-between overflow-hidden rounded-2xl border border-border bg-white shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-blue sm:rounded-[26px]">
+          <article class="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-blue sm:rounded-[26px]">
             <div>
               <!-- Visual Mockup: Turnitout document processing metrics -->
-              <div class="border-b border-border bg-[#101827] p-3 text-white">
+              <div class="border-b border-border bg-[#101827] flex min-h-[13rem] flex-col justify-center p-3 text-white">
                 <div class="flex items-center justify-between gap-2 pb-2">
                   <span class="font-mono text-[10px] font-bold tracking-wide text-slate-200">TURNITOUT ENGINE v1.0</span>
                   <span class="rounded bg-blue/20 px-1.5 py-0.5 font-mono text-[9px] font-bold tracking-[0.12em] text-blue">METRICS</span>
@@ -582,22 +582,19 @@
               </div>
 
               <!-- Card Body -->
-              <div class="p-5">
-                <div class="flex flex-wrap items-center justify-between gap-2">
-                  <span class="rounded-full bg-blue/10 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-blue">Programmatic NLP &amp; Pipeline</span>
-                  <div class="flex gap-3">
-                    <a href="https://github.com/MASR170902/Turnitout" target="_blank" rel="noreferrer" class="text-xs font-semibold uppercase tracking-[0.18em] text-blue transition-colors duration-200 hover:text-blueHover">github ↗</a>
-                    <a href="http://192.168.18.189:8501" target="_blank" rel="noreferrer" class="text-xs font-semibold uppercase tracking-[0.18em] text-blue transition-colors duration-200 hover:text-blueHover">live demo ↗</a>
-                  </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between gap-3">
+                  <span class="rounded-full bg-blue/10 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-blue">NLP Pipeline</span>
+                  <a href="https://github.com/MASR170902/Turnitout" target="_blank" rel="noreferrer" class="shrink-0 whitespace-nowrap text-xs font-semibold uppercase tracking-[0.18em] text-blue transition-colors duration-200 hover:text-blueHover">github.com ↗</a>
                 </div>
                 <h3 class="mt-3 text-lg font-bold text-navy sm:text-xl">Turnitout: Academic AI Humanizer &amp; Layout Preserver</h3>
-                <p class="mt-2.5 text-sm leading-6 text-navySoft text-justify">
+                <p class="project-description prose-copy text-justify leading-relaxed mt-2.5 text-sm text-navySoft">
                   Lightweight self-hosted NLP utility and web interface designed to neutralize AI writing patterns on academic papers and technical manuscripts without generative LLM hallucinations. Employs a multi-standard dictionary rule set (Wikipedia, GPTZero, SearchAtlas, Grammarly) combined with a sentence-splitting burstiness enhancer. Features an in-place OpenXML DOM rewriter for .docx files that preserves complex IEEE two-column formatting, nested tables, captions, and citations intact. Deployed as an isolated systemd microservice inside an unprivileged Proxmox LXC container with sub-second execution overhead.
                 </p>
               </div>
             </div>
 
-            <div class="border-t border-border/60 bg-slate-50/50 p-5 pt-3">
+            <div class="mt-auto border-t border-border/60 bg-slate-50/50 p-6">
               <div class="flex flex-wrap gap-1.5 text-[11px] font-medium uppercase tracking-[0.12em] text-navySoft sm:gap-2">
                 <span class="rounded-full border border-border bg-white px-2.5 py-1">Python</span>
                 <span class="rounded-full border border-border bg-white px-2.5 py-1">Streamlit</span>
@@ -611,53 +608,53 @@
         </div>
       </section>
 
-      <div class="mx-auto max-w-6xl px-4 pb-4 sm:px-6 sm:pb-8 lg:px-8">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div class="h-px w-full bg-border" aria-hidden="true"></div>
       </div>
 
       <!-- ── 02 / About Section (Personal, Specific & 100% English) ───────────── -->
-      <section id="about" class="mx-auto max-w-6xl scroll-mt-20 px-4 py-8 sm:scroll-mt-24 sm:px-6 sm:py-12 lg:px-8 lg:py-20">
-        <div class="flex flex-col gap-1">
+      <section id="about" class="mx-auto flex max-w-6xl scroll-mt-20 flex-col gap-8 px-4 py-16 sm:scroll-mt-24 sm:px-6 lg:px-8">
+        <div class="flex flex-col gap-2">
           <p class="text-xs font-semibold uppercase tracking-[0.28em] text-blue">02 / About</p>
           <h2 class="text-2xl font-black tracking-[-0.05em] text-navy sm:text-3xl lg:text-4xl">Building reliable systems. End to end, from hardware to cloud.</h2>
-          <p class="mt-1 text-xs text-navySoft sm:text-sm">Bridging physical embedded hardware and resilient server infrastructure with a relentless focus on production reliability.</p>
+          <p class="prose-copy text-justify leading-relaxed text-xs sm:text-sm">Bridging physical embedded hardware and resilient server infrastructure with a relentless focus on production reliability.</p>
         </div>
 
-        <div class="mt-8 grid items-start gap-8 lg:grid-cols-[1.25fr_0.75fr]">
-          <div class="space-y-6">
-            <div class="space-y-4 text-sm leading-relaxed text-navySoft sm:text-base sm:leading-7 text-justify">
-              <p class="text-base font-semibold text-navy sm:text-lg">
+        <div class="grid items-stretch gap-6 lg:grid-cols-[1.25fr_0.75fr]">
+          <div class="flex flex-col justify-between gap-6">
+            <div class="about-copy space-y-4 text-sm text-navySoft sm:text-base">
+              <p class="text-justify leading-relaxed text-base font-semibold text-navy sm:text-lg">
                 I build systems that actually work in the real world—not just proof-of-concepts that fall apart in production.
               </p>
-              <p>
+              <p class="text-justify leading-relaxed">
                 From microcontroller firmware (ESP32, Arduino) and mechanical design to distributed infrastructure (Proxmox, MikroTik, Docker), I handle the full stack. Most engineers specialize in <em>either</em> embedded <em>or</em> infrastructure. I do both—and that's where reliability lives: at the boundaries between layers.
               </p>
-              <p>
+              <p class="text-justify leading-relaxed">
                 Right now I'm focused on infrastructure automation and systems resilience: clustering, monitoring, and automated recovery. Because uptime isn't luck—it's architecture.
               </p>
-              <p>
+              <p class="text-justify leading-relaxed">
                 I document everything and build for handoff. Systems I deploy keep working long after I'm gone.
               </p>
             </div>
 
             <!-- Balanced Core Competency Pillars (Fills Left Column) -->
             <div class="grid gap-3 pt-2 sm:grid-cols-3">
-              <div class="rounded-xl border border-border bg-white p-3.5 shadow-sm">
+              <div class="flex h-full flex-col rounded-xl border border-border bg-white p-6 shadow-sm">
                 <span class="text-xs font-bold uppercase tracking-wider text-blue">01. Virtualization</span>
                 <p class="mt-1 text-xs text-navy font-semibold">Proxmox VE &amp; Linux</p>
-                <p class="mt-1 text-[11px] leading-snug text-muted text-justify">IaC Bash provisioning, LXC containerization, &amp; server hardening.</p>
+                <p class="prose-copy text-justify leading-relaxed mt-auto pt-2 text-[11px]">IaC Bash provisioning, LXC containerization, &amp; server hardening.</p>
               </div>
 
-              <div class="rounded-xl border border-border bg-white p-3.5 shadow-sm">
+              <div class="flex h-full flex-col rounded-xl border border-border bg-white p-6 shadow-sm">
                 <span class="text-xs font-bold uppercase tracking-wider text-blue">02. Networking</span>
                 <p class="mt-1 text-xs text-navy font-semibold">MikroTik &amp; Routing</p>
-                <p class="mt-1 text-[11px] leading-snug text-muted text-justify">Multi-subnet VLAN, QoS traffic shaping, &amp; Nginx reverse proxy.</p>
+                <p class="prose-copy text-justify leading-relaxed mt-auto pt-2 text-[11px]">Multi-subnet VLAN, QoS traffic shaping, &amp; Nginx reverse proxy.</p>
               </div>
 
-              <div class="rounded-xl border border-border bg-white p-3.5 shadow-sm">
+              <div class="flex h-full flex-col rounded-xl border border-border bg-white p-6 shadow-sm">
                 <span class="text-xs font-bold uppercase tracking-wider text-blue">03. Hardware / IoT</span>
                 <p class="mt-1 text-xs text-navy font-semibold">Embedded &amp; Telemetry</p>
-                <p class="mt-1 text-[11px] leading-snug text-muted text-justify">ESP32, MQTT protocols, sensor acquisition, &amp; Proxmox dashboards.</p>
+                <p class="prose-copy text-justify leading-relaxed mt-auto pt-2 text-[11px]">ESP32, MQTT protocols, sensor acquisition, &amp; Proxmox dashboards.</p>
               </div>
             </div>
           </div>
@@ -681,16 +678,18 @@
         </div>
       </section>
 
-      <div class="mx-auto max-w-6xl px-4 pb-4 sm:px-6 sm:pb-8 lg:px-8">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div class="h-px w-full bg-border" aria-hidden="true"></div>
       </div>
 
       <!-- ── 03 / Experience Section (2 Clear Career Timelines with Metrics) ─────── -->
-      <section id="experience" class="mx-auto max-w-6xl scroll-mt-20 px-4 py-8 sm:scroll-mt-24 sm:px-6 sm:py-12 lg:px-8 lg:py-20">
-        <p class="text-xs font-semibold uppercase tracking-[0.28em] text-blue">03 / Experience</p>
-        <h2 class="mt-2 text-2xl font-black tracking-[-0.05em] text-navy sm:mt-3 sm:text-3xl lg:text-4xl">Professional experience</h2>
+      <section id="experience" class="mx-auto flex max-w-6xl scroll-mt-20 flex-col gap-8 px-4 py-16 sm:scroll-mt-24 sm:px-6 lg:px-8">
+        <div class="flex flex-col gap-2">
+          <p class="text-xs font-semibold uppercase tracking-[0.28em] text-blue">03 / Experience</p>
+          <h2 class="text-2xl font-black tracking-[-0.05em] text-navy sm:text-3xl lg:text-4xl">Professional experience</h2>
+        </div>
 
-        <div class="mt-8 relative border-l border-border pl-5 sm:pl-8 space-y-10">
+        <div class="relative space-y-10 border-l border-border pl-5 sm:pl-8">
           <!-- Role 1: Nov 2024 – Present -->
           <article class="relative">
             <span class="absolute -left-[1.55rem] top-1 h-3.5 w-3.5 rounded-full border-4 border-white bg-blue shadow-soft sm:-left-[1.8rem]"></span>
@@ -699,7 +698,7 @@
             </div>
             <h3 class="role-title mt-1 text-xl font-bold text-navy sm:text-2xl">Systems Engineer &amp; IoT Developer</h3>
             <p class="role-company mt-0.5 text-sm font-medium text-navySoft sm:text-base">Independent / Freelance</p>
-            <ul class="mt-4 space-y-2.5 text-sm leading-6 text-navySoft sm:space-y-3 sm:text-base sm:leading-7 text-justify">
+            <ul class="prose-copy text-justify leading-relaxed mt-4 space-y-4 text-sm text-navySoft sm:text-base">
               <li>• Architecting and maintaining 3-node distributed infrastructure supporting 107+ virtualized instances (16 VMs + 39 LXCs on lab cluster; 12 instances on home lab). Implemented multi-subnet routing with MikroTik and traffic shaping across isolated VLANs. Deployed and maintained full observability stack using Proxmox native dashboard monitoring 120+ host and container metrics in real-time, enabling rapid incident detection and resolution.</li>
               <li>• Developed CLI automation tools including MarkItDown Converter (Python) to batch-convert technical documentation into structured Markdown—slashing LLM token usage by 85% per upload with sub-5% error rate.</li>
               <li>• Automated daily off-site ZFS snapshot backups and container provisioning workflows using Bash IaC, cutting manual disaster recovery time from 45 minutes to under 5 minutes per host.</li>
@@ -712,7 +711,7 @@
             <p class="role-period text-xs font-semibold uppercase tracking-[0.22em] text-muted">Jul 2022 — Oct 2024</p>
             <h3 class="role-title mt-1 text-xl font-bold text-navy sm:text-2xl">Robotics Engineer</h3>
             <p class="role-company mt-0.5 text-sm font-medium text-navySoft sm:text-base">CV Solusi Arya Prima</p>
-            <ul class="mt-4 space-y-2.5 text-sm leading-6 text-navySoft sm:space-y-3 sm:text-base sm:leading-7 text-justify">
+            <ul class="prose-copy text-justify leading-relaxed mt-4 space-y-4 text-sm text-navySoft sm:text-base">
               <li>• Engineered and deployed 12+ custom automation systems for industrial clients (manufacturing, material handling, inspection), reducing customer production downtime by an average of 40% and increasing line throughput by 25%.</li>
               <li>• Performed root-cause analysis on 20+ complex mechanical and electrical systems, delivering hardware and firmware fixes that elevated system uptime from 85% to 99%+ within 6 months.</li>
               <li>• Managed end-to-end project delivery across 5 simultaneous client engagements from scoping to production deployment, consistently hitting a 3-month turnaround from kickoff to field handoff.</li>
@@ -722,31 +721,31 @@
         </div>
       </section>
 
-      <div class="mx-auto max-w-6xl px-4 pb-4 sm:px-6 sm:pb-8 lg:px-8">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div class="h-px w-full bg-border" aria-hidden="true"></div>
       </div>
 
       <!-- ── 04 / Technical Expertise (Cleaned Up Tags & Missing Added) ────────── -->
-      <section id="expertise" class="mx-auto max-w-6xl scroll-mt-20 px-4 py-8 sm:scroll-mt-24 sm:px-6 sm:py-12 lg:px-8 lg:py-20">
-        <div class="flex flex-col gap-1">
+      <section id="expertise" class="mx-auto flex max-w-6xl scroll-mt-20 flex-col gap-8 px-4 py-16 sm:scroll-mt-24 sm:px-6 lg:px-8">
+        <div class="flex flex-col gap-2">
           <p class="text-xs font-semibold uppercase tracking-[0.28em] text-blue">04 / Expertise</p>
           <h2 class="text-2xl font-black tracking-[-0.05em] text-navy sm:text-3xl lg:text-4xl">Technical expertise</h2>
-          <p class="mt-1 text-xs text-navySoft sm:text-sm">Practical engineering proficiencies in virtualization, routing, Linux administration, and embedded IoT.</p>
+          <p class="prose-copy text-justify leading-relaxed text-xs sm:text-sm">Practical engineering proficiencies in virtualization, routing, Linux administration, and embedded IoT.</p>
         </div>
 
-        <div class="mt-8 grid gap-4 sm:gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <div class="grid gap-6 md:auto-rows-fr md:grid-cols-2 xl:grid-cols-3">
           <!-- Card 1: Virtualization & Infrastructure -->
-          <div class="flex flex-col justify-between rounded-2xl border border-border bg-white p-5 shadow-soft transition-all duration-200 hover:border-blue sm:rounded-[24px]">
+          <div class="flex h-full flex-col rounded-2xl border border-border bg-white p-6 shadow-soft transition-all duration-200 hover:border-blue sm:rounded-[24px]">
             <div>
-              <div class="flex items-center gap-2.5">
+              <div class="flex min-h-[3.5rem] items-center gap-2.5">
                 <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-blue/10 text-base text-blue">☁️</span>
                 <h3 class="text-base font-bold text-navy sm:text-lg">Virtualization & Infrastructure</h3>
               </div>
-              <p class="mt-3 text-xs leading-relaxed text-navySoft sm:text-sm text-justify">
+              <p class="prose-copy text-justify leading-relaxed mt-3 text-xs text-navySoft sm:text-sm">
                 Proxmox VE virtualization architecture for workload isolation, KVM/QEMU virtual machines, lightweight LXC containerization, Bash infrastructure-as-code automation, and centralized ZFS/LVM storage pools with scheduled snapshot backups.
               </p>
             </div>
-            <div class="mt-4 flex flex-wrap gap-1.5 text-[11px] font-medium uppercase tracking-[0.12em] text-navySoft sm:gap-2">
+            <div class="mt-auto flex flex-wrap gap-1.5 pt-4 text-[11px] font-medium uppercase tracking-[0.12em] text-navySoft sm:gap-2">
               <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">Proxmox VE</span>
               <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">KVM / QEMU</span>
               <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">LXC Containers</span>
@@ -756,17 +755,17 @@
           </div>
 
           <!-- Card 2: Networking & Routing -->
-          <div class="flex flex-col justify-between rounded-2xl border border-border bg-white p-5 shadow-soft transition-all duration-200 hover:border-blue sm:rounded-[24px]">
+          <div class="flex h-full flex-col rounded-2xl border border-border bg-white p-6 shadow-soft transition-all duration-200 hover:border-blue sm:rounded-[24px]">
             <div>
-              <div class="flex items-center gap-2.5">
+              <div class="flex min-h-[3.5rem] items-center gap-2.5">
                 <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-blue/10 text-base text-blue">🌐</span>
                 <h3 class="text-base font-bold text-navy sm:text-lg">Networking & Routing</h3>
               </div>
-              <p class="mt-3 text-xs leading-relaxed text-navySoft sm:text-sm text-justify">
+              <p class="prose-copy text-justify leading-relaxed mt-3 text-xs text-navySoft sm:text-sm">
                 MikroTik RouterOS configuration, multi-subnet routing design, 802.1Q VLAN segmentation, firewall filter and NAT policies, plus bandwidth shaping (Simple Queue &amp; Queue Tree) for Quality of Service (QoS) optimization.
               </p>
             </div>
-            <div class="mt-4 flex flex-wrap gap-1.5 text-[11px] font-medium uppercase tracking-[0.12em] text-navySoft sm:gap-2">
+            <div class="mt-auto flex flex-wrap gap-1.5 pt-4 text-[11px] font-medium uppercase tracking-[0.12em] text-navySoft sm:gap-2">
               <span class="rounded-full border border-blue/30 bg-blue/10 px-2.5 py-1.5 font-bold text-blue">MikroTik RouterOS</span>
               <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">Multi-Subnet Routing</span>
               <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">VLAN</span>
@@ -777,17 +776,17 @@
           </div>
 
           <!-- Card 3: Linux Administration & Services -->
-          <div class="flex flex-col justify-between rounded-2xl border border-border bg-white p-5 shadow-soft transition-all duration-200 hover:border-blue sm:rounded-[24px]">
+          <div class="flex h-full flex-col rounded-2xl border border-border bg-white p-6 shadow-soft transition-all duration-200 hover:border-blue sm:rounded-[24px]">
             <div>
-              <div class="flex items-center gap-2.5">
+              <div class="flex min-h-[3.5rem] items-center gap-2.5">
                 <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-blue/10 text-base text-blue">🐧</span>
                 <h3 class="text-base font-bold text-navy sm:text-lg">Linux Administration & Services</h3>
               </div>
-              <p class="mt-3 text-xs leading-relaxed text-navySoft sm:text-sm text-justify">
+              <p class="prose-copy text-justify leading-relaxed mt-3 text-xs text-navySoft sm:text-sm">
                 Ubuntu and Debian server management: SSH key hardening, fail2ban, UFW/iptables firewall configuration, Nginx reverse proxy with automated SSL/TLS termination (Let's Encrypt), systemd service supervisors, and shell automation scripts.
               </p>
             </div>
-            <div class="mt-4 flex flex-wrap gap-1.5 text-[11px] font-medium uppercase tracking-[0.12em] text-navySoft sm:gap-2">
+            <div class="mt-auto flex flex-wrap gap-1.5 pt-4 text-[11px] font-medium uppercase tracking-[0.12em] text-navySoft sm:gap-2">
               <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">Ubuntu Server</span>
               <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">Debian</span>
               <span class="rounded-full border border-blue/30 bg-blue/10 px-2.5 py-1.5 font-bold text-blue">Shell Scripting</span>
@@ -798,17 +797,17 @@
           </div>
 
           <!-- Card 4: Monitoring & Observability -->
-          <div class="flex flex-col justify-between rounded-2xl border border-border bg-white p-5 shadow-soft transition-all duration-200 hover:border-blue sm:rounded-[24px]">
+          <div class="flex h-full flex-col rounded-2xl border border-border bg-white p-6 shadow-soft transition-all duration-200 hover:border-blue sm:rounded-[24px]">
             <div>
-              <div class="flex items-center gap-2.5">
+              <div class="flex min-h-[3.5rem] items-center gap-2.5">
                 <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-blue/10 text-base text-blue">📈</span>
                 <h3 class="text-base font-bold text-navy sm:text-lg">Monitoring & Observability</h3>
               </div>
-              <p class="mt-3 text-xs leading-relaxed text-navySoft sm:text-sm text-justify">
+              <p class="prose-copy text-justify leading-relaxed mt-3 text-xs text-navySoft sm:text-sm">
                 Infrastructure health tracking via Proxmox's native dashboard for real-time CPU, RAM, storage I/O, and container metrics across cluster nodes. Sensor telemetry from IoT edge devices (ESP32 + MQTT) aggregated and visualized alongside host metrics for unified operational visibility.
               </p>
             </div>
-            <div class="mt-4 flex flex-wrap gap-1.5 text-[11px] font-medium uppercase tracking-[0.12em] text-navySoft sm:gap-2">
+            <div class="mt-auto flex flex-wrap gap-1.5 pt-4 text-[11px] font-medium uppercase tracking-[0.12em] text-navySoft sm:gap-2">
               <span class="rounded-full border border-blue/30 bg-blue/10 px-2.5 py-1.5 font-bold text-blue">Proxmox Monitoring</span>
               <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">Native Dashboard</span>
               <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">MQTT Telemetry</span>
@@ -818,17 +817,17 @@
           </div>
 
           <!-- Card 5: IoT & Embedded Systems -->
-          <div class="flex flex-col justify-between rounded-2xl border border-border bg-white p-5 shadow-soft transition-all duration-200 hover:border-blue sm:rounded-[24px]">
+          <div class="flex h-full flex-col rounded-2xl border border-border bg-white p-6 shadow-soft transition-all duration-200 hover:border-blue sm:rounded-[24px]">
             <div>
-              <div class="flex items-center gap-2.5">
+              <div class="flex min-h-[3.5rem] items-center gap-2.5">
                 <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-blue/10 text-base text-blue">⚡</span>
                 <h3 class="text-base font-bold text-navy sm:text-lg">IoT & Embedded Systems</h3>
               </div>
-              <p class="mt-3 text-xs leading-relaxed text-navySoft sm:text-sm text-justify">
+              <p class="prose-copy text-justify leading-relaxed mt-3 text-xs text-navySoft sm:text-sm">
                 Firmware development for ESP32 and Arduino microcontrollers, industrial sensor acquisition (temperature, humidity, telemetry), lightweight pub/sub data transport over MQTT protocols, embedded local HTTP servers, and electro-mechanical interfacing.
               </p>
             </div>
-            <div class="mt-4 flex flex-wrap gap-1.5 text-[11px] font-medium uppercase tracking-[0.12em] text-navySoft sm:gap-2">
+            <div class="mt-auto flex flex-wrap gap-1.5 pt-4 text-[11px] font-medium uppercase tracking-[0.12em] text-navySoft sm:gap-2">
               <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">ESP32</span>
               <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">Arduino</span>
               <span class="rounded-full border border-blue/30 bg-blue/10 px-2.5 py-1.5 font-bold text-blue">MQTT</span>
@@ -838,17 +837,17 @@
           </div>
 
           <!-- Card 6: Certifications & Engineering Standards -->
-          <div class="flex flex-col justify-between rounded-2xl border border-border bg-white p-5 shadow-soft transition-all duration-200 hover:border-blue sm:rounded-[24px]">
+          <div class="flex h-full flex-col rounded-2xl border border-border bg-white p-6 shadow-soft transition-all duration-200 hover:border-blue sm:rounded-[24px]">
             <div>
-              <div class="flex items-center gap-2.5">
+              <div class="flex min-h-[3.5rem] items-center gap-2.5">
                 <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-blue/10 text-base text-blue">🏆</span>
                 <h3 class="text-base font-bold text-navy sm:text-lg">Certifications & Engineering</h3>
               </div>
-              <p class="mt-3 text-xs leading-relaxed text-navySoft sm:text-sm text-justify">
+              <p class="prose-copy text-justify leading-relaxed mt-3 text-xs text-navySoft sm:text-sm">
                 Holds verified <strong>Linux System Administration Certification from ID-Networkers (IDN)</strong>. Rigorous version control with Git/GitHub, continuous integration / continuous deployment (CI/CD) pipelines, and reproducible infrastructure-as-code practices.
               </p>
             </div>
-            <div class="mt-4 flex flex-wrap gap-1.5 text-[11px] font-medium uppercase tracking-[0.12em] text-navySoft sm:gap-2">
+            <div class="mt-auto flex flex-wrap gap-1.5 pt-4 text-[11px] font-medium uppercase tracking-[0.12em] text-navySoft sm:gap-2">
               <span class="rounded-full border border-blue/30 bg-blue/10 px-2.5 py-1.5 font-bold text-blue">ID-Networkers Linux</span>
               <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">Git / GitHub</span>
               <span class="rounded-full border border-border bg-slate-50 px-2.5 py-1.5">CI / CD</span>
@@ -859,21 +858,23 @@
         </div>
       </section>
 
-      <div class="mx-auto max-w-6xl px-4 pb-4 sm:px-6 sm:pb-8 lg:px-8">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div class="h-px w-full bg-border" aria-hidden="true"></div>
       </div>
 
       <!-- ── 05 / Contact Section (100% English & Anti-Scrape Protected) ───────── -->
-      <section id="contact" class="mx-auto max-w-6xl scroll-mt-20 px-4 py-8 sm:scroll-mt-24 sm:px-6 sm:py-12 lg:px-8 lg:py-20">
-        <p class="text-xs font-semibold uppercase tracking-[0.28em] text-blue">05 / Contact</p>
-        <h2 class="mt-2 text-2xl font-black tracking-[-0.05em] text-navy sm:mt-3 sm:text-3xl lg:text-4xl">Let’s build something reliable.</h2>
-        <p class="mt-3 max-w-2xl text-sm leading-6 text-navySoft sm:mt-4 sm:text-base sm:leading-7 lg:text-lg text-justify">
-          Open for systems engineering collaborations, Proxmox virtualization setups, MikroTik network engineering, and IoT automation implementations.
-        </p>
+      <section id="contact" class="mx-auto flex max-w-6xl scroll-mt-20 flex-col gap-8 px-4 py-16 sm:scroll-mt-24 sm:px-6 lg:px-8">
+        <div class="flex flex-col gap-3">
+          <p class="text-xs font-semibold uppercase tracking-[0.28em] text-blue">05 / Contact</p>
+          <h2 class="text-2xl font-black tracking-[-0.05em] text-navy sm:text-3xl lg:text-4xl">Let’s build something reliable.</h2>
+          <p class="prose-copy text-justify leading-relaxed max-w-2xl text-sm sm:text-base lg:text-lg">
+            Open for systems engineering collaborations, Proxmox virtualization setups, MikroTik network engineering, and IoT automation implementations.
+          </p>
+        </div>
 
-        <div class="mt-8 grid gap-4 sm:gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="grid gap-6 sm:auto-rows-fr sm:grid-cols-2 lg:grid-cols-4">
           <!-- Card 1: Direct Email -->
-          <div class="group flex flex-col justify-between rounded-2xl border border-border bg-white p-5 shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-blue">
+          <div class="group flex h-full flex-col rounded-2xl border border-border bg-white p-6 shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-blue">
             <div>
               <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-surfaceMuted text-blue transition-colors duration-200 group-hover:bg-blue group-hover:text-white">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -883,9 +884,9 @@
               </div>
               <h3 class="mt-4 text-base font-bold text-navy">Direct Email</h3>
               <p class="mt-1 text-xs text-muted">Primary communication channel</p>
-              <p class="mt-2 text-xs text-navySoft">Send a direct message or copy address safely with one click.</p>
+              <p class="contact-card-copy prose-copy text-justify leading-relaxed mt-2 text-xs text-navySoft">Send a direct message or copy address safely with one click.</p>
             </div>
-            <div class="mt-5 flex flex-col gap-2">
+            <div class="mt-auto flex min-h-[6.25rem] flex-col justify-start gap-2 pt-5">
               <button
                 id="btn-contact-email"
                 type="button"
@@ -905,7 +906,7 @@
           </div>
 
           <!-- Card 2: WhatsApp Business -->
-          <div class="group flex flex-col justify-between rounded-2xl border border-border bg-white p-5 shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-blue">
+          <div class="group flex h-full flex-col rounded-2xl border border-border bg-white p-6 shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-blue">
             <div>
               <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-surfaceMuted text-blue transition-colors duration-200 group-hover:bg-blue group-hover:text-white">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -914,9 +915,9 @@
               </div>
               <h3 class="mt-4 text-base font-bold text-navy">WhatsApp</h3>
               <p class="mt-1 text-xs text-muted">Rapid consultation &amp; messaging</p>
-              <p class="mt-2 text-xs text-navySoft">Fast response for engineering inquiries and system architecture discussions.</p>
+              <p class="contact-card-copy prose-copy text-justify leading-relaxed mt-2 text-xs text-navySoft">Fast response for engineering inquiries and system architecture discussions.</p>
             </div>
-            <div class="mt-5">
+            <div class="mt-auto flex min-h-[6.25rem] flex-col justify-start pt-5">
               <button
                 id="btn-contact-wa"
                 type="button"
@@ -933,7 +934,7 @@
             href="https://github.com/MASR170902"
             target="_blank"
             rel="noreferrer"
-            class="group flex flex-col justify-between rounded-2xl border border-border bg-white p-5 shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-blue"
+            class="group flex h-full flex-col rounded-2xl border border-border bg-white p-6 shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-blue"
           >
             <div>
               <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-surfaceMuted text-blue transition-colors duration-200 group-hover:bg-blue group-hover:text-white">
@@ -943,9 +944,9 @@
               </div>
               <h3 class="mt-4 text-base font-bold text-navy">GitHub</h3>
               <p class="mt-1 text-xs text-muted">Open source &amp; repositories</p>
-              <p class="mt-2 text-xs text-navySoft">Explore source repositories for Proxmox automation, CLI pipelines, and lab projects.</p>
+              <p class="contact-card-copy prose-copy text-justify leading-relaxed mt-2 text-xs text-navySoft">Explore source repositories for Proxmox automation, CLI pipelines, and lab projects.</p>
             </div>
-            <div class="mt-5 flex items-center text-xs font-semibold text-blue transition-colors duration-200 group-hover:text-blueHover">
+            <div class="mt-auto flex min-h-[6.25rem] items-start pt-5 text-xs font-semibold text-blue transition-colors duration-200 group-hover:text-blueHover">
               <span>Open GitHub Profile</span>
               <span class="ml-1 transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
             </div>
@@ -956,7 +957,7 @@
             href="https://www.linkedin.com/in/muhammadabdulrasyid-dev/"
             target="_blank"
             rel="noreferrer"
-            class="group flex flex-col justify-between rounded-2xl border border-border bg-white p-5 shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-blue"
+            class="group flex h-full flex-col rounded-2xl border border-border bg-white p-6 shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-blue"
           >
             <div>
               <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-surfaceMuted text-blue transition-colors duration-200 group-hover:bg-blue group-hover:text-white">
@@ -966,9 +967,9 @@
               </div>
               <h3 class="mt-4 text-base font-bold text-navy">LinkedIn</h3>
               <p class="mt-1 text-xs text-muted">Professional network &amp; career</p>
-              <p class="mt-2 text-xs text-navySoft">Professional connections, verified credentials, and career recommendations.</p>
+              <p class="contact-card-copy prose-copy text-justify leading-relaxed mt-2 text-xs text-navySoft">Professional connections, verified credentials, and career recommendations.</p>
             </div>
-            <div class="mt-5 flex items-center text-xs font-semibold text-blue transition-colors duration-200 group-hover:text-blueHover">
+            <div class="mt-auto flex min-h-[6.25rem] items-start pt-5 text-xs font-semibold text-blue transition-colors duration-200 group-hover:text-blueHover">
               <span>View LinkedIn Profile</span>
               <span class="ml-1 transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
             </div>

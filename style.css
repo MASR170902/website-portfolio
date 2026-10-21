@@ -26,6 +26,35 @@ body {
   line-height: 1.6;
 }
 
+/* Body copy: left-aligned, no hyphenation, balanced line breaks.
+   Lives in @layer components so utility classes (text-navySoft, text-muted,
+   text-xs...) in the HTML can still override color and size. */
+@layer components {
+  .prose-copy,
+  .about-copy > p {
+    @apply leading-relaxed text-navySoft;
+    text-align: left;
+    hyphens: manual;
+    -webkit-hyphens: manual;
+    text-wrap: pretty;
+  }
+}
+
+/* The HTML still carries text-justify; neutralise it on the web.
+   (The CV PDF is justified separately in cvGenerator.js.) */
+.text-justify {
+  text-align: left !important;
+  hyphens: manual !important;
+  -webkit-hyphens: manual !important;
+}
+
+/* Headings: balanced lines */
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
 img {
   display: block;
   max-width: 100%;

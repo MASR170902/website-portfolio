@@ -175,7 +175,7 @@ cvButtons.forEach((btn) => {
       // Allow UI update tick before synchronous canvas/pdf work
       await new Promise((resolve) => setTimeout(resolve, 60));
 
-      generateAndDownloadCV();
+      await generateAndDownloadCV();
 
       label.textContent = 'Downloaded!';
       setTimeout(() => {
