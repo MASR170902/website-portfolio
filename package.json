@@ -3,20 +3,33 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently -k -n API,Vite \"node server/index.js --api-only\" \"vite\"",
     "build": "vite build",
-    "preview": "vite preview",
-    "start": "vite preview"
+    "preview": "node server/index.js",
+    "start": "node server/index.js",
+    "admin:hash": "node server/hash-password.js",
+    "test": "node --test"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
+    "concurrently": "^10.0.6",
     "postcss": "^8.4.49",
     "sharp": "^0.35.5",
     "tailwindcss": "^3.4.17",
     "vite": "^6.0.7"
   },
   "dependencies": {
-    "jspdf": "^4.2.1"
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
+    "express-rate-limit": "^8.7.3",
+    "express-session": "^1.19.0",
+    "helmet": "^8.3.0",
+    "jspdf": "^4.2.1",
+    "multer": "^2.5.0"
   }
 }

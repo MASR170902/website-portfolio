@@ -1,5 +1,5 @@
 export default {
-  content: ['./index.html', './main.js'],
+  content: ['./index.html', './main.js', './admin-panel.js'],
   theme: {
     extend: {
       colors: {

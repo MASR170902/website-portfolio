@@ -1,4 +1,5 @@
 import { jsPDF } from 'jspdf';
+import { getProtectedEmail, getProtectedPhone } from './contactDetails.js';
 
 /**
  * Extracts portfolio content from the DOM and builds an A4 PDF resume.
@@ -153,7 +154,6 @@ export async function generateAndDownloadCV() {
   // ── 1. Header ───────────────────────────────────────────────────────────────
   const PHOTO_W = 26;
   const PHOTO_H = 34; // 3:4 portrait, matches the ID-style photo
-  const headerTextW = CONTENT_W - PHOTO_W - 6;
   const headerTop = y;
 
   let photo = null;
@@ -188,23 +188,39 @@ export async function generateAndDownloadCV() {
     }
   }
 
+  const profileRoles = Array.from(document.querySelectorAll('#profile-roles span'))
+    .map((role) => clean(role.textContent))
+    .filter(Boolean);
+  const roleTitle = profileRoles.join('  |  ');
+  const roleLines = doc.splitTextToSize(roleTitle, CONTENT_W - PHOTO_W - 6);
+
   font('bold', SIZE.name, NAVY);
   y += lh(SIZE.name);
-  drawLine('MUHAMMAD ABDUL RASYID', MARGIN_X);
+  drawLine(clean(document.querySelector('#about img[alt^="Portrait of"]')?.alt.replace(/^Portrait of\s+/i, '')) || 'MUHAMMAD ABDUL RASYID', MARGIN_X);
 
-  y += GAP.xs + lh(SIZE.role);
   font('bold', SIZE.role, BLUE);
-  drawLine('SYSTEMS ENGINEER & IOT DEVELOPER  |  ROBOTICS ENGINEER', MARGIN_X);
+  roleLines.forEach((line) => {
+    y += GAP.xs + lh(SIZE.role);
+    drawLine(line, MARGIN_X);
+  });
 
   y += GAP.sm;
   font('normal', SIZE.meta, MUTED);
+  const location = clean(document.querySelector('[data-cv-location]')?.dataset.cvLocation);
+  const socialLinks = Array.from(document.querySelectorAll('#hero a[href^="https://"]'))
+    .map((link) => clean(link.href.replace(/^https:\/\//, '').replace(/\/$/, '')))
+    .filter(Boolean);
   [
-    'Purbalingga, Central Java, Indonesia',
-    'rasyidmuhammadabdul@gmail.com  |  +62 896-7304-9122',
-    'github.com/MASR170902  |  linkedin.com/in/muhammadabdulrasyid-dev'
-  ].forEach((txt) => {
+    location,
+    `${getProtectedEmail()}  |  ${getProtectedPhone()}`,
+    socialLinks.join('  |  ')
+  ].filter(Boolean).forEach((txt) => {
     y += lh(SIZE.meta);
-    drawLine(txt, MARGIN_X);
+    const lines = doc.splitTextToSize(clean(txt), CONTENT_W - PHOTO_W - 6);
+    lines.forEach((line, index) => {
+      if (index > 0) y += lh(SIZE.meta);
+      drawLine(line, MARGIN_X);
+    });
   });
 
   y = Math.max(y, headerTop + PHOTO_H) + GAP.md;
@@ -220,7 +236,10 @@ export async function generateAndDownloadCV() {
     .filter(Boolean);
 
   const summary = aboutParagraphs.length
-    ? aboutParagraphs.slice(0, 3).join(' ')
+    ? [
+        clean(document.querySelector('#hero .prose-copy')?.textContent),
+        ...aboutParagraphs
+      ].filter(Boolean).join(' ')
     : 'Systems engineer with expertise across embedded microcontrollers, Proxmox VE virtualization, multi-subnet MikroTik routing, and Linux infrastructure.';
 
   paragraph(summary);
@@ -269,24 +288,57 @@ export async function generateAndDownloadCV() {
   const projects = Array.from(document.querySelectorAll('#projects article'));
   projects.forEach((article, idx) => {
     const title = clean(article.querySelector('h3')?.textContent) || 'Project';
+    const titleLines = doc.splitTextToSize(title, CONTENT_W);
     const raw = clean(article.querySelector('.project-description')?.textContent || article.querySelector('p.mt-2\\.5')?.textContent);
-    const desc = raw.length > 900 ? raw.slice(0, 897).trimEnd() + '...' : raw;
+    const desc = raw;
+    const category = clean(article.querySelector('.p-6 div > span.rounded-full')?.textContent);
+    const projectLinks = Array.from(article.querySelectorAll('a[href^="https://"]'))
+      .map((link) => ({
+        label: clean(link.textContent.replace(/[\u2197\u2192]/g, '').trim()) || 'Project link',
+        url: link.href
+      }));
     const tags = Array.from(article.querySelectorAll('.border-t span.rounded-full'))
       .map((s) => clean(s.textContent))
       .filter(Boolean);
+    const tagLines = tags.length
+      ? doc.splitTextToSize(tags.join('  |  '), CONTENT_W)
+      : [];
 
     if (idx > 0) y += GAP.md;
-    // Title + tags + first two description lines must stay together
-    ensureSpace(lh(SIZE.itemTitle) + lh(SIZE.tag) * 2 + lh(SIZE.body) * 2 + GAP.sm);
+    ensureSpace(
+      lh(SIZE.itemTitle) * titleLines.length +
+      (category ? lh(SIZE.tag) : 0) +
+      projectLinks.length * lh(SIZE.tag) +
+      lh(SIZE.tag) * Math.min(tagLines.length, 2) +
+      lh(SIZE.body) * 2 + GAP.sm
+    );
 
     font('bold', SIZE.itemTitle, NAVY);
-    y += lh(SIZE.itemTitle);
-    drawLine(title, MARGIN_X);
+    titleLines.forEach((line) => {
+      y += lh(SIZE.itemTitle);
+      drawLine(line, MARGIN_X);
+    });
 
-    if (tags.length) {
+    if (category) {
+      y += GAP.xs;
+      font('bold', SIZE.tag, BLUE);
+      y += lh(SIZE.tag);
+      drawLine(category, MARGIN_X);
+    }
+
+    projectLinks.forEach(({ label, url }) => {
       y += GAP.xs;
       font('normal', SIZE.tag, BLUE);
-      const tagLines = doc.splitTextToSize(tags.join('  |  '), CONTENT_W);
+      const linkLines = doc.splitTextToSize(`${label}: ${url}`, CONTENT_W);
+      linkLines.forEach((line) => {
+        y += lh(SIZE.tag);
+        doc.text(line, MARGIN_X, y, { url });
+      });
+    });
+
+    if (tagLines.length) {
+      y += GAP.xs;
+      font('normal', SIZE.tag, BLUE);
       tagLines.forEach((t) => {
         y += lh(SIZE.tag);
         drawLine(t, MARGIN_X);
@@ -298,7 +350,7 @@ export async function generateAndDownloadCV() {
   });
 
   // ── 5. Expertise ────────────────────────────────────────────────────────────
-  sectionHeader('Core Technical Proficiencies & Certifications');
+  sectionHeader('Core Technical Proficiencies');
 
   const cards = Array.from(document.querySelectorAll('#expertise .rounded-2xl'))
     .map((card) => ({
@@ -328,7 +380,75 @@ export async function generateAndDownloadCV() {
     });
   });
 
-  // ── 6. Footer on every page ─────────────────────────────────────────────────
+  // ── 6. Certificates ─────────────────────────────────────────────────────────
+  sectionHeader('Certificates & Course Completions');
+
+  const certificates = Array.from(document.querySelectorAll('#certificate-list .certificate-item'))
+    .map((article) => ({
+      title: clean(article.querySelector('.certificate-title')?.textContent),
+      issuer: clean(article.querySelector('.certificate-issuer')?.textContent),
+      date: clean(article.querySelector('.certificate-date')?.textContent),
+      credentialId: clean(article.querySelector('.certificate-id')?.textContent),
+      note: clean(article.querySelector('.certificate-note')?.textContent),
+      fileUrl: article.querySelector('.certificate-file-link')?.href,
+      verificationUrl: article.querySelector('.certificate-verify-link')?.href
+    }))
+    .filter((certificate) => certificate.title);
+
+  certificates.forEach((certificate, index) => {
+    const titleLines = doc.splitTextToSize(clean(certificate.title), CONTENT_W);
+    const details = [
+      certificate.issuer,
+      certificate.date,
+      certificate.credentialId ? `Credential ID: ${certificate.credentialId}` : ''
+    ].filter(Boolean).join('  |  ');
+    const detailLines = doc.splitTextToSize(clean(details), CONTENT_W);
+    const noteLines = certificate.note ? doc.splitTextToSize(clean(certificate.note), CONTENT_W) : [];
+    const blockHeight =
+      titleLines.length * lh(SIZE.itemTitle) +
+      detailLines.length * lh(SIZE.sub) +
+      noteLines.length * lh(SIZE.body) +
+      lh(SIZE.tag) +
+      GAP.xs * (certificate.note ? 2 : 1);
+
+    if (index > 0) y += GAP.sm;
+    ensureSpace(blockHeight);
+
+    font('bold', SIZE.itemTitle, NAVY);
+    titleLines.forEach((line) => {
+      y += lh(SIZE.itemTitle);
+      drawLine(line, MARGIN_X);
+    });
+
+    font('normal', SIZE.sub, MUTED);
+    detailLines.forEach((line) => {
+      y += lh(SIZE.sub);
+      drawLine(line, MARGIN_X);
+    });
+
+    if (noteLines.length) {
+      y += GAP.xs;
+      noteLines.forEach((line) => {
+        y += lh(SIZE.body);
+        font('normal', SIZE.body, BODY);
+        drawLine(line, MARGIN_X);
+      });
+    }
+
+    y += GAP.xs;
+    font('bold', SIZE.tag, BLUE);
+    y += lh(SIZE.tag);
+    if (certificate.fileUrl) {
+      doc.text('View certificate', MARGIN_X, y, { url: certificate.fileUrl });
+    }
+    if (certificate.verificationUrl) {
+      const verifyLabel = 'Verify online';
+      const linkX = MARGIN_X + doc.getTextWidth('View certificate') + 6;
+      doc.text(verifyLabel, linkX, y, { url: certificate.verificationUrl });
+    }
+  });
+
+  // ── 7. Footer on every page ─────────────────────────────────────────────────
   const total = doc.getNumberOfPages();
   for (let i = 1; i <= total; i++) {
     doc.setPage(i);
